@@ -14,6 +14,7 @@ export const AboutPage: React.FC = () => {
         badge="ABOUT THE COMPANY"
         title="Cultivating a Greener Tomorrow"
         subtitle="Natural Solutions for a Better Tomorrow — We support technical advancement in agriculture through field-based solutions, organic fertilizers, and sustainable farming systems."
+        bgImage="/assets/farmers.jpg"
         breadcrumbs={[
           { label: 'Home', to: '/' },
           { label: 'About Us' },

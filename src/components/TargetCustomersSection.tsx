@@ -32,7 +32,7 @@ export const TargetCustomersSection: React.FC = () => {
             }}
           >
             <Users size={14} color="#4E6E10" />
-            <span>11 — TARGET CUSTOMERS</span>
+            <span>TARGET CUSTOMERS</span>
           </div>
 
           <h2

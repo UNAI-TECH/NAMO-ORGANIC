@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertTriangle, Dna, Layers, ShieldAlert, Sparkles } from 'lucide-react';
+import { AlertTriangle, Dna, Layers, ShieldAlert } from 'lucide-react';
 
 export const ProblemSection: React.FC = () => {
   const causes = [
@@ -58,7 +58,7 @@ export const ProblemSection: React.FC = () => {
             }}
           >
             <AlertTriangle size={14} color="#D97706" />
-            <span>04 — THE PROBLEM</span>
+            <span>THE PROBLEM</span>
           </div>
 
           <h2
@@ -184,31 +184,11 @@ export const ProblemSection: React.FC = () => {
             backgroundColor: '#1b4d35',
             color: '#FFFFFF',
             borderRadius: '20px',
-            padding: '2.5rem 2.8rem',
+            padding: '2.4rem 2.6rem',
             boxShadow: '0 12px 35px rgba(27, 77, 53, 0.18)',
-            display: 'grid',
-            gridTemplateColumns: 'auto 1fr',
-            gap: '2rem',
-            alignItems: 'center',
           }}
           className="problem-approach-banner"
         >
-          <div
-            style={{
-              width: '56px',
-              height: '56px',
-              borderRadius: '16px',
-              backgroundColor: 'rgba(255, 219, 21, 0.15)',
-              border: '1.5px solid rgba(255, 219, 21, 0.4)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0,
-            }}
-          >
-            <Sparkles size={28} color="#FFDB15" />
-          </div>
-
           <div>
             <span
               style={{
@@ -218,19 +198,21 @@ export const ProblemSection: React.FC = () => {
                 textTransform: 'uppercase',
                 color: '#FFDB15',
                 display: 'block',
-                marginBottom: '0.4rem',
+                marginBottom: '0.6rem',
               }}
             >
               NAMO'S SCIENTIFIC & VEDIC APPROACH
             </span>
             <p
               style={{
-                fontSize: '1.15rem',
+                fontSize: 'clamp(1rem, 2.2vw, 1.15rem)',
                 lineHeight: 1.7,
                 color: 'rgba(255, 255, 255, 0.95)',
                 fontWeight: 600,
                 letterSpacing: '-0.01em',
+                margin: 0,
               }}
+              className="problem-approach-text"
             >
               NAMO seeks to address these systemic issues by promoting products and agricultural practices
               that actively support crop diversity, soil biological vitality, agricultural resilience, and
@@ -248,8 +230,11 @@ export const ProblemSection: React.FC = () => {
         }
         @media (max-width: 768px) {
           .problem-approach-banner {
-            grid-template-columns: 1fr !important;
-            padding: 2rem !important;
+            padding: 1.5rem 1.25rem !important;
+          }
+          .problem-approach-text {
+            font-size: 0.96rem !important;
+            line-height: 1.6 !important;
           }
         }
       `}</style>

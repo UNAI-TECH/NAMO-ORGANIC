@@ -15,6 +15,7 @@ export const MarketPage: React.FC = () => {
         badge="MARKET OPPORTUNITY & SCALABLE ARCHITECTURE"
         title="India's Agricultural Opportunity & Scalable Model"
         subtitle="Leveraging rising domestic demand, robust export markets, and sustainable farming systems to build a resilient, circular agrarian enterprise."
+        bgImage="/assets/sunset-farm.jpg"
         breadcrumbs={[
           { label: 'Home', to: '/' },
           { label: 'Market & Scale' },

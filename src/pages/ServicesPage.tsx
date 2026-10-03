@@ -2,7 +2,7 @@ import React from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { ServicesSection } from '../components/ServicesSection';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Mail } from 'lucide-react';
+import { ArrowRight, Sprout, Mail } from 'lucide-react';
 
 export const ServicesPage: React.FC = () => {
   return (
@@ -11,6 +11,7 @@ export const ServicesPage: React.FC = () => {
         badge="AGRARIAN SERVICES & SOLUTIONS"
         title="Healthy Soil. Thriving Farmers. A Greener Tomorrow."
         subtitle="NAMO provides an extensive suite of agricultural products, field consultancy, and technology-oriented solutions to power India’s sustainable farming transition."
+        bgImage="/assets/light_organic_farmland_bg.jpg"
         breadcrumbs={[
           { label: 'Home', to: '/' },
           { label: 'Services' },
@@ -59,7 +60,7 @@ export const ServicesPage: React.FC = () => {
                 boxShadow: '0 6px 20px rgba(27, 77, 53, 0.25)',
               }}
             >
-              <Sparkles size={16} color="#FFDB15" />
+              <Sprout size={16} color="#FFDB15" />
               <span>Explore Focus Products</span>
               <ArrowRight size={16} />
             </Link>

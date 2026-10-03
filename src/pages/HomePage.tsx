@@ -37,7 +37,7 @@ export const HomePage: React.FC = () => {
       <ServicesSection />
 
       {/* 07: Our Focus Products — Panchakavya & Algae Solutions */}
-      <FocusProductsSection />
+      <FocusProductsSection isHomePage={true} />
 
       {/* 08: Unique Selling Proposition — Why Choose NAMO? */}
       <WhyChooseNamoSection />

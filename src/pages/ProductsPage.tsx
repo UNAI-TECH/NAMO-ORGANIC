@@ -1,35 +1,68 @@
 import React from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader';
 import { FocusProductsSection } from '../components/FocusProductsSection';
 import { WhyChooseNamoSection } from '../components/WhyChooseNamoSection';
 import { BenefitsSection } from '../components/BenefitsSection';
-import { Link } from 'react-router-dom';
 import { ArrowRight, BarChart3, Mail } from 'lucide-react';
 
-export const ProductsPage: React.FC = () => {
+interface ProductsPageProps {
+  category?: 'panchakavya' | 'natural' | 'all';
+}
+
+export const ProductsPage: React.FC<ProductsPageProps> = ({ category }) => {
+  const location = useLocation();
+
+  // Determine active category from props or current URL pathname
+  let activeCategory: 'panchakavya' | 'natural' | 'all' = category || 'panchakavya';
+  if (!category) {
+    if (location.pathname.includes('/natural')) {
+      activeCategory = 'natural';
+    } else if (location.pathname.includes('/panchakavya')) {
+      activeCategory = 'panchakavya';
+    }
+  }
+
+  const isNatural = activeCategory === 'natural';
+
   return (
     <main>
       <PageHeader
-        badge="FLAGSHIP BIO-INPUTS"
-        title="Natural Solutions for Sustainable Agriculture"
-        subtitle="Traditionally prepared Panchakavya bio-fertilizers, botanical pest barriers, and cattle feed supplements — scientifically formulated for all crops and climatic zones."
+        badge={isNatural ? '100% PURE & CERTIFIED ORGANIC' : 'FLAGSHIP BIO-INPUTS & LIVESTOCK CARE'}
+        title={
+          isNatural
+            ? 'Pure Certified Farm-Fresh Products & Heritage Staples'
+            : 'Panchakavya Bio-Fertilizers & Crop Care'
+        }
+        subtitle={
+          isNatural
+            ? 'From farm to kitchen — discover 11 pure, cold-pressed oils, Desi cow A2 ghee, raw forest honey, unpolished heritage grains, stone-ground flours, pulses, and traditional snacks.'
+            : 'Certified organic bio-fertilizers, botanical crop defenders, and micro-algae cattle feed supplements formulated to regenerate soil biology and boost livestock wellness.'
+        }
+        bgImage={isNatural ? '/assets/forest_wooden_showcase_bg.jpg' : '/assets/nature-soil.jpg'}
         breadcrumbs={[
           { label: 'Home', to: '/' },
-          { label: 'Focus Products' },
+          { label: isNatural ? 'Natural Products' : 'Panchakavya Products' },
         ]}
       />
 
-      {/* 07: Focus Products Showcase */}
-      <FocusProductsSection />
+      {/* Focus Products Showcase (Panchakavya 3 products or Natural 11 products, square visual cards, no filters) */}
+      <FocusProductsSection category={activeCategory} isHomePage={false} />
 
-      {/* 08: Unique Selling Proposition — Why Choose NAMO */}
+      {/* Unique Selling Proposition — Why Choose NAMO */}
       <WhyChooseNamoSection />
 
-      {/* 09: Benefits of NAMO Organic Fertilizers & Pesticides */}
-      <BenefitsSection />
+      {/* Benefits Section for Panchakavya Products */}
+      {!isNatural && <BenefitsSection />}
 
-      {/* CTA to Market Opportunity or Contact */}
-      <section style={{ padding: '5rem 2rem', backgroundColor: '#FFFFFF', borderTop: '1px solid rgba(24, 36, 10, 0.08)' }}>
+      {/* CTA to Market Opportunity or Technical Dossier Inquiry */}
+      <section
+        style={{
+          padding: '5rem 2rem',
+          backgroundColor: '#FFFFFF',
+          borderTop: '1px solid rgba(24, 36, 10, 0.08)',
+        }}
+      >
         <div style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
           <h3
             style={{
@@ -43,12 +76,28 @@ export const ProductsPage: React.FC = () => {
           >
             Explore India's Agricultural Market & Scalable Model
           </h3>
-          <p style={{ fontSize: '1.05rem', color: '#4A583A', maxWidth: '680px', margin: '0 auto 2rem auto', lineHeight: 1.7 }}>
+          <p
+            style={{
+              fontSize: '1.05rem',
+              color: '#4A583A',
+              maxWidth: '680px',
+              margin: '0 auto 2rem auto',
+              lineHeight: 1.7,
+            }}
+          >
             Understand the US $24B agricultural market opportunity, our circular FPO partnerships, and multi-channel
             commercial growth model.
           </p>
 
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '1rem',
+              flexWrap: 'wrap',
+            }}
+          >
             <Link
               to="/market"
               style={{

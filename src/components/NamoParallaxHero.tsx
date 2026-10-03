@@ -26,74 +26,292 @@ export const NamoParallaxHero: React.FC = () => {
     return false;
   });
 
-  // Showcase Products Data (3 Flagship Products matching Reference Images & Brochure)
-  const heroProducts = [
+  // 3 Hero Slider Slides: Panchakavya Products, Natural Products, Pet Products
+  const heroSlides = [
     {
-      id: 'panchakavya-fertilizer',
-      title: 'NAMO Organic Fertilizers',
-      titleAccent: 'Based on Panchakavya',
-      tagline: 'Traditional 5-Ingredient Soil Microbiome Restorer',
-      desc: 'Natural agricultural inputs designed to support healthy plant growth and sustainable farming practices. Prepared from five pure cow-derived bio-inputs (Milk, Curd, Ghee, Dung, Urine) to revitalize depleted soils, enhance microflora, and reduce crop irrigation requirements by up to 40%.',
-      specs: [
-        { label: '5 Bio-Inputs', val: 'Pure Panchakavya' },
-        { label: 'Water Savings', val: 'Up to 40%' },
-        { label: 'Soil Health', val: 'Rich Microflora' },
+      id: 'panchakavya',
+      tabLabel: 'Panchakavya Products',
+      badge: 'FLAGSHIP BIO-INPUTS & LIVESTOCK CARE',
+      categoryUrl: '/products/panchakavya',
+      bgImage: '/assets/light_organic_farmland_bg.jpg',
+      products: [
+        {
+          id: 'panchakavya-fertilizer',
+          title: 'NAMO Organic Fertilizers',
+          titleAccent: 'Based on Panchakavya',
+          tagline: 'Traditional 5-Ingredient Soil Microbiome Restorer',
+          desc: 'Natural agricultural inputs designed to support healthy plant growth and sustainable farming practices. Prepared from five pure cow-derived bio-inputs (Milk, Curd, Ghee, Dung, Urine) to revitalize depleted soils, enhance microflora, and reduce crop irrigation requirements by up to 40%.',
+          specs: [
+            { label: '5 Bio-Inputs', val: 'Pure Panchakavya' },
+            { label: 'Water Savings', val: 'Up to 40%' },
+            { label: 'Soil Health', val: 'Rich Microflora' },
+          ],
+          image: '/assets/namo-panchakavya-transparent-cropped.png',
+          alt: 'NAMO Organic Fertilizers Based on Panchakavya',
+          shortName: 'Fertilizers',
+        },
+        {
+          id: 'panchakavya-pesticide',
+          title: 'NAMO Organic Pesticides',
+          titleAccent: 'Based on Panchakavya',
+          tagline: 'Residue-Free Ecological Crop Protection & Pest Defense',
+          desc: 'Natural crop protection solutions engineered to protect plants from pests while preserving beneficial pollinator insects and maintaining a healthy, balanced soil ecosystem. Safe for plants, farmers, and consumers.',
+          specs: [
+            { label: 'Pest Defense', val: 'Target Eco-Shield' },
+            { label: 'Chemicals', val: 'Zero Toxic Residue' },
+            { label: 'Ecosystem', val: 'Pollinator Friendly' },
+          ],
+          image: '/assets/namo-panchakavya-transparent-cropped.png',
+          alt: 'NAMO Organic Pesticides Based on Panchakavya',
+          shortName: 'Pesticides',
+        },
+        {
+          id: 'algae-extract',
+          title: 'NAMO Algae Extract',
+          titleAccent: 'Cattle Feed Supplement',
+          tagline: 'Bioactive Oceanic Nutrition for Dairy Cattle Wellness',
+          desc: 'Natural nutritional feed supplement rich in oceanic macro-algae, bioactive nutrients, and essential minerals. Fortifies dairy cattle immunity, optimizes ruminal digestion, and sustainably boosts daily milk yields with superior fat and SNF profiles.',
+          specs: [
+            { label: 'Origin', val: 'Pure Marine Algae' },
+            { label: 'Target', val: 'Dairy Cattle' },
+            { label: 'Key Impact', val: 'Yield & Immunity' },
+          ],
+          image: '/assets/namo-algae-extract-transparent-cropped.png',
+          alt: 'NAMO Algae Extract Cattle Feed Supplement',
+          shortName: 'Cattle Feed',
+        },
       ],
-      image: '/assets/namo-panchakavya-transparent-cropped.png',
-      alt: 'NAMO Organic Fertilizers Based on Panchakavya',
-      shortName: 'Fertilizers',
     },
     {
-      id: 'panchakavya-pesticide',
-      title: 'NAMO Organic Pesticides',
-      titleAccent: 'Based on Panchakavya',
-      tagline: 'Residue-Free Ecological Crop Protection & Pest Defense',
-      desc: 'Natural crop protection solutions engineered to protect plants from pests while preserving beneficial pollinator insects and maintaining a healthy, balanced soil ecosystem. Safe for plants, farmers, and consumers.',
-      specs: [
-        { label: 'Pest Defense', val: 'Target Eco-Shield' },
-        { label: 'Chemicals', val: 'Zero Toxic Residue' },
-        { label: 'Ecosystem', val: 'Pollinator Friendly' },
+      id: 'natural',
+      tabLabel: 'Natural Products',
+      badge: '100% PURE & CERTIFIED ORGANIC',
+      categoryUrl: '/products/natural',
+      bgImage: '/assets/natural_products_hero_bg.jpg',
+      products: [
+        {
+          id: 'sesame-oil',
+          title: 'Cold-Pressed Sesame Oil',
+          titleAccent: 'Traditional Vaagai Mara Chekku',
+          tagline: 'Pure Native Seed Extraction with Natural Sesamol',
+          desc: 'Mechanically cold-pressed at controlled low temperatures to keep natural antioxidants, sesamol, and Vitamin E intact. Unrefined, unbleached, and free from hexane solvent extraction for daily authentic culinary and wellness use.',
+          specs: [
+            { label: 'Extraction', val: 'Wood Cold-Pressed' },
+            { label: 'Chemicals', val: 'Zero Hexane/Bleach' },
+            { label: 'Nutrients', val: 'Sesamol & Vit-E' },
+          ],
+          image: '/products/transparent/oils.png',
+          alt: 'Cold-Pressed Sesame Oil',
+          shortName: 'Sesame Oil',
+        },
+        {
+          id: 'desi-cow-a2-ghee',
+          title: 'Desi Cow A2 Ghee',
+          titleAccent: 'Traditional Vedic Bilona Method',
+          tagline: 'Cultured Curd Butter Churned Granular Ghee',
+          desc: 'Crafted exclusively from grass-fed indigenous cow milk cultured into curds and churned with wooden bilona. Golden granular texture packed with natural butyric acid, fat-soluble vitamins, and authentic aroma.',
+          specs: [
+            { label: 'Process', val: 'Vedic Bilona Churn' },
+            { label: 'Source', val: 'Indigenous Desi Cows' },
+            { label: 'Quality', val: 'Granular A2 Purity' },
+          ],
+          image: '/products/transparent/gee.png',
+          alt: 'Desi Cow A2 Ghee',
+          shortName: 'A2 Ghee',
+        },
+        {
+          id: 'raw-forest-honey',
+          title: 'Wild Multi-Flora Honey',
+          titleAccent: 'Raw & Unpasteurized',
+          tagline: 'Biodiverse Forest Reserve Harvest with Live Enzymes',
+          desc: 'Direct from wild forest bee reserves. 100% raw, unheated, and micro-filtered to preserve active pollen grains, digestive enzymes, and beneficial antioxidants with zero high-fructose corn syrup.',
+          specs: [
+            { label: 'Processing', val: 'Raw & Unheated' },
+            { label: 'Source', val: 'Wild Forest Trees' },
+            { label: 'Enzymes', val: 'Living Bio-Pollen' },
+          ],
+          image: '/products/transparent/honey.png',
+          alt: 'Wild Multi-Flora Honey',
+          shortName: 'Forest Honey',
+        },
+        {
+          id: 'heritage-rice',
+          title: 'Heritage Traditional Rice',
+          titleAccent: 'Ancient Unpolished Grains',
+          tagline: 'Organically Grown Indigenous Low-GI Rice',
+          desc: 'Ancient native paddy varieties cultivated with Panchakavya organic inputs. Retains natural outer bran rich in dietary fiber, anthocyanins, and micro-minerals for sustained low-glycemic stamina.',
+          specs: [
+            { label: 'Polishing', val: 'Zero Chemical Polish' },
+            { label: 'Fiber', val: 'High Dietary Fiber' },
+            { label: 'Glycemic', val: 'Low GI Sustained' },
+          ],
+          image: '/products/transparent/rice.png',
+          alt: 'Heritage Traditional Rice',
+          shortName: 'Heritage Rice',
+        },
+        {
+          id: 'organic-jaggery',
+          title: 'Organic Jaggery Powder',
+          titleAccent: 'Chemical-Free Nattu Sakkarai',
+          tagline: 'Herbal Clarified Cane Sweetener with Pure Iron',
+          desc: 'Produced from organic sugarcane fields and clarified using natural vegetable extracts. Completely free from sulfur, artificial bleaching agents, or chemicals. Naturally rich in iron and essential minerals.',
+          specs: [
+            { label: 'Clarification', val: 'Herbal Clarified' },
+            { label: 'Additives', val: 'Zero Sulfur Bleach' },
+            { label: 'Minerals', val: 'Natural Iron Rich' },
+          ],
+          image: '/products/transparent/jaggery.png',
+          alt: 'Organic Jaggery Powder',
+          shortName: 'Jaggery Powder',
+        },
       ],
-      image: '/assets/namo-panchakavya-transparent-cropped.png',
-      alt: 'NAMO Organic Pesticides Based on Panchakavya',
-      shortName: 'Pesticides',
     },
     {
-      id: 'algae-extract',
-      title: 'NAMO Algae Extract',
-      titleAccent: 'Cattle Feed Supplement',
-      tagline: 'Bioactive Oceanic Nutrition for Dairy Cattle Wellness',
-      desc: 'Natural nutritional feed supplement rich in oceanic macro-algae, bioactive nutrients, and essential minerals. Fortifies dairy cattle immunity, optimizes ruminal digestion, and sustainably boosts daily milk yields with superior fat and SNF profiles.',
-      specs: [
-        { label: 'Origin', val: 'Pure Marine Algae' },
-        { label: 'Target', val: 'Dairy Cattle' },
-        { label: 'Key Impact', val: 'Yield & Immunity' },
+      id: 'pets',
+      tabLabel: 'Pet Products',
+      badge: 'SUPER-PREMIUM VETERINARY PET CARE',
+      categoryUrl: '/products/pets',
+      bgImage: '/assets/pets_products_hero_bg.jpg',
+      products: [
+        {
+          id: 'pet-adult-dogs',
+          title: 'NAMO Elite Adult Dogs',
+          titleAccent: 'Super-Premium Dry Food',
+          tagline: 'High-Protein Nutrition with Real Meat & 5 Vitality Herbs',
+          desc: 'Formulated for adult dogs with 26% protein, 14% fat, and organic calcium derived from marine fish cartilage. Enhanced with Turmeric, Rosemary, Wheatgrass, Chicory, and Moringa for strong joints and vibrant energy.',
+          specs: [
+            { label: 'Protein / Fat', val: '26% Pro / 14% Fat' },
+            { label: 'Joint Health', val: 'Organic Fish Bone Ca' },
+            { label: 'Botanicals', val: '5 Therapeutic Herbs' },
+          ],
+          image: '/products/pets/NAMO Elite for Adult Dogs.png',
+          alt: 'NAMO Elite for Adult Dogs',
+          shortName: 'Adult Dogs',
+        },
+        {
+          id: 'pet-mother-baby',
+          title: 'NAMO Elite Mother & Baby',
+          titleAccent: 'Puppy & Nursing Mother Care',
+          tagline: '80% Animal Origin Protein for Lactation & Early Growth',
+          desc: 'Super-premium nutrition formulated for pregnant or nursing mothers and growing puppies. Concentrated with 20 amino acids, 8 vitamins, and zero added gluten to support rapid skeletal growth and maternal recovery.',
+          specs: [
+            { label: 'Animal Protein', val: '80% High Origin' },
+            { label: 'Gluten', val: 'Zero Added Gluten' },
+            { label: 'Growth', val: 'Optimal Skeletal Dev' },
+          ],
+          image: '/products/pets/NAMO Elite for Mother & Baby.png',
+          alt: 'NAMO Elite for Mother & Baby',
+          shortName: 'Mother & Baby',
+        },
+        {
+          id: 'pet-cats',
+          title: 'NAMO Elite for Cats',
+          titleAccent: 'Taurine-Rich Feline Formula',
+          tagline: 'Chicken Liver, Heart & Sardines for Vision & Coat',
+          desc: 'Complete balanced dry food for cats of all life stages including queens and kittens. Fortified with 2000 mg/kg taurine for heart and eyesight wellness, 34% protein, and higher EPA/DHA omega fatty acids for a silky coat.',
+          specs: [
+            { label: 'Taurine', val: '2000 mg/kg Vision' },
+            { label: 'Protein / Fat', val: '34% Pro / 14% Fat' },
+            { label: 'Omegas', val: 'Rich Marine 3, 6, 9' },
+          ],
+          image: '/products/pets/NAMO Elite for Cats.png',
+          alt: 'NAMO Elite for Cats',
+          shortName: 'Cats Formula',
+        },
+        {
+          id: 'pet-stud-dogs',
+          title: 'NAMO Xcite for Stud Dogs',
+          titleAccent: 'Specialized High-Energy Dog Food',
+          tagline: '4900 Kcal Formula for Stud Conditioning & Vitality',
+          desc: 'Ultra-premium formulation designed for breeding stud dogs. Packed with 30% protein, 20% healthy lipids, and 8 herbal adaptogens (Asparagus, Ashwagandha, Spirulina, Moringa) to maximize vitality, stamina, and sperm motility.',
+          specs: [
+            { label: 'Energy Profile', val: '4900 Kcal Formula' },
+            { label: 'Protein / Fat', val: '30% Pro / 20% Fat' },
+            { label: 'Herbs', val: '8 Adaptogenic Herbs' },
+          ],
+          image: '/products/pets/NAMO Xcite for Stud Dogs.png',
+          alt: 'NAMO Xcite for Stud Dogs',
+          shortName: 'Stud Dogs',
+        },
+        {
+          id: 'pet-fish-oil',
+          title: 'NAMO Pure Fish Oil',
+          titleAccent: 'Coat & Joint Wellness Supplement',
+          tagline: 'Rich in Active EPA & DHA for Dogs & Cats',
+          desc: 'Pure veterinary-grade fish oil extracted from Indian catfish. Delivers 23g of EPA & DHA per 100ml to soothe irritated skin, eliminate excessive shedding, lubricate hip joints, and naturally reduce systemic inflammation.',
+          specs: [
+            { label: 'Active EPA/DHA', val: '23g per 100ml' },
+            { label: 'Application', val: 'Easy Food Add-on' },
+            { label: 'Benefits', val: 'Lustrous Skin & Coat' },
+          ],
+          image: '/products/pets/NAMO Fish Oil.png',
+          alt: 'NAMO Fish Oil',
+          shortName: 'Fish Oil',
+        },
       ],
-      image: '/assets/namo-algae-extract-transparent-cropped.png',
-      alt: 'NAMO Algae Extract Cattle Feed Supplement',
-      shortName: 'Cattle Feed',
     },
   ];
 
-  const [activeProductIndex, setActiveProductIndex] = useState(0);
+  // Hero Slider active slide index: 0 = Panchakavya, 1 = Natural Products, 2 = Pet Products
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  // Track active product index individually for each slide
+  const [productIndices, setProductIndices] = useState<number[]>([0, 0, 0]);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isSlidePaused, setIsSlidePaused] = useState(false);
+
+  const currentSlide = heroSlides[activeSlideIndex];
+  const isSlideOne = activeSlideIndex === 0;
+  const activeProductIndex = productIndices[activeSlideIndex] || 0;
+  const currentProduct = currentSlide.products[activeProductIndex] || currentSlide.products[0];
+
+  const handleSelectHeroSlide = (sIndex: number) => {
+    if (sIndex === activeSlideIndex) return;
+    setIsTransitioning(true);
+    setActiveSlideIndex(sIndex);
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, 280);
+  };
+
+  const nextHeroSlide = () => {
+    handleSelectHeroSlide((activeSlideIndex + 1) % heroSlides.length);
+  };
+
+  const prevHeroSlide = () => {
+    handleSelectHeroSlide((activeSlideIndex - 1 + heroSlides.length) % heroSlides.length);
+  };
 
   const handleSelectProduct = (index: number) => {
     if (index === activeProductIndex) return;
     setIsTransitioning(true);
-    setActiveProductIndex(index);
+    setProductIndices((prev) => {
+      const next = [...prev];
+      next[activeSlideIndex] = index;
+      return next;
+    });
     setTimeout(() => {
       setIsTransitioning(false);
-    }, 320);
+    }, 280);
   };
 
   const nextProduct = () => {
-    handleSelectProduct((activeProductIndex + 1) % heroProducts.length);
+    const total = currentSlide.products.length;
+    handleSelectProduct((activeProductIndex + 1) % total);
   };
 
   const prevProduct = () => {
-    handleSelectProduct((activeProductIndex - 1 + heroProducts.length) % heroProducts.length);
+    const total = currentSlide.products.length;
+    handleSelectProduct((activeProductIndex - 1 + total) % total);
   };
+
+  // Auto-play for hero slides carousel (every 9s, pauses on hover/interaction)
+  useEffect(() => {
+    if (isSlidePaused) return;
+    const interval = setInterval(() => {
+      handleSelectHeroSlide((activeSlideIndex + 1) % heroSlides.length);
+    }, 9000);
+    return () => clearInterval(interval);
+  }, [activeSlideIndex, isSlidePaused, heroSlides.length]);
 
   // Helper to check if intro was already completed in this browser session
   const checkIntroDone = (): boolean => {
@@ -547,6 +765,8 @@ export const NamoParallaxHero: React.FC = () => {
     <section
       ref={wrapperRef}
       id="namo-parallax-hero-wrapper"
+      onMouseEnter={() => setIsSlidePaused(true)}
+      onMouseLeave={() => setIsSlidePaused(false)}
       style={{
         position: 'relative',
         width: '100%',
@@ -743,23 +963,30 @@ export const NamoParallaxHero: React.FC = () => {
             pointerEvents: 'none',
           }}
         >
-          <img
-            ref={heroBgRef}
-            src="/assets/light_organic_farmland_bg.jpg"
-            alt="Light Themed Organic Farmland Background"
-            style={{
-              position: 'absolute',
-              left: 0,
-              bottom: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: isMobile ? '65% center' : 'center center',
-              willChange: 'opacity',
-              opacity: isParallaxDone ? 1 : 0,
-              display: 'block',
-            }}
-          />
+          {heroSlides.map((slide, sIndex) => {
+            const isSlideActive = sIndex === activeSlideIndex;
+            return (
+              <img
+                key={slide.id}
+                ref={sIndex === 0 ? heroBgRef : undefined}
+                src={slide.bgImage}
+                alt={`${slide.tabLabel} Background`}
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  bottom: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: isMobile ? '65% center' : 'center center',
+                  willChange: 'opacity',
+                  opacity: isParallaxDone ? (isSlideActive ? 1 : 0) : (sIndex === 0 ? 0 : 0),
+                  transition: 'opacity 0.75s ease-in-out',
+                  display: 'block',
+                }}
+              />
+            );
+          })}
         </div>
 
         {/* ===================================================================
@@ -818,9 +1045,9 @@ export const NamoParallaxHero: React.FC = () => {
           <div
             className="hero-content-inner"
             style={{
-              flex: isMobile ? 'none' : '0 1 54%',
+              flex: isMobile ? 'none' : (isSlideOne ? '0 1 54%' : '0 1 50%'),
               width: '100%',
-              maxWidth: isMobile ? '560px' : '640px',
+              maxWidth: isMobile ? '560px' : (isSlideOne ? '640px' : '620px'),
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
@@ -852,7 +1079,7 @@ export const NamoParallaxHero: React.FC = () => {
                   textAlign: isMobile ? 'center' : 'left',
                 }}
               >
-                {heroProducts[activeProductIndex].title}{' '}
+                {currentProduct.title}{' '}
                 <span
                   style={{
                     color: '#1B4D35',
@@ -860,7 +1087,7 @@ export const NamoParallaxHero: React.FC = () => {
                     fontSize: isMobile ? '0.92em' : '0.90em',
                   }}
                 >
-                  {heroProducts[activeProductIndex].titleAccent}
+                  {currentProduct.titleAccent}
                 </span>
               </h1>
 
@@ -878,41 +1105,37 @@ export const NamoParallaxHero: React.FC = () => {
                   gap: '0.5rem',
                 }}
               >
-                <span>{heroProducts[activeProductIndex].tagline}</span>
+                <span>{currentProduct.tagline}</span>
               </div>
 
               {/* Product Narrative */}
               <p
                 style={{
-                  fontSize: isMobile ? '0.76rem' : 'clamp(0.96rem, 1.08vw, 1.06rem)',
-                  lineHeight: isMobile ? 1.40 : 1.60,
+                  fontSize: isMobile ? '0.78rem' : 'clamp(0.92rem, 1.05vw, 1.02rem)',
+                  lineHeight: isMobile ? 1.45 : 1.55,
                   color: '#28381A',
-                  maxWidth: isMobile ? '520px' : '590px',
-                  margin: isMobile ? '0 auto 0.55rem auto' : '0 0 1.4rem 0',
+                  maxWidth: isMobile ? '520px' : '600px',
+                  margin: isMobile ? '0 auto 0.65rem auto' : '0 0 1.25rem 0',
                   fontWeight: 450,
                   textAlign: isMobile ? 'center' : 'left',
-                  display: isMobile ? '-webkit-box' : 'block',
-                  WebkitLineClamp: isMobile ? 3 : undefined,
-                  WebkitBoxOrient: isMobile ? 'vertical' : undefined,
-                  overflow: isMobile ? 'hidden' : 'visible',
                 }}
               >
-                {heroProducts[activeProductIndex].desc}
+                {currentProduct.desc}
               </p>
 
-              {/* Technical Spec Highlight Pills (Strictly 3 Columns on Mobile & Desktop) */}
+              {/* Technical Spec Highlight Pills (Strictly 3 Columns, Full Text, Zero Ellipsis Cut-off) */}
               <div
                 className="hero-specs-grid"
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: isMobile ? 'repeat(3, minmax(0, 1fr))' : 'repeat(3, 1fr)',
-                  gap: isMobile ? '0.35rem' : 'clamp(0.65rem, 1vw, 0.9rem)',
-                  maxWidth: isMobile ? '100%' : '590px',
+                  gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+                  gap: isMobile ? '0.4rem' : 'clamp(0.65rem, 1vw, 0.9rem)',
+                  maxWidth: isMobile ? '100%' : '600px',
                   width: '100%',
-                  marginBottom: isMobile ? '0.55rem' : '1.65rem',
+                  marginBottom: isMobile ? '0.65rem' : '1.5rem',
                 }}
               >
-                {heroProducts[activeProductIndex].specs.map((spec, i) => (
+                {currentProduct.specs.map((spec, i) => (
                   <div
                     key={i}
                     style={{
@@ -920,23 +1143,29 @@ export const NamoParallaxHero: React.FC = () => {
                       backdropFilter: 'blur(12px)',
                       WebkitBackdropFilter: 'blur(12px)',
                       border: '1.5px solid rgba(103, 160, 32, 0.35)',
-                      borderRadius: isMobile ? '10px' : '16px',
-                      padding: isMobile ? '0.35rem 0.25rem' : 'clamp(0.65rem, 1.1vh, 0.85rem) clamp(0.85rem, 1.1vw, 1.15rem)',
+                      borderRadius: isMobile ? '12px' : '16px',
+                      padding: isMobile ? '0.45rem 0.35rem' : 'clamp(0.65rem, 1.1vh, 0.85rem) clamp(0.55rem, 0.9vw, 0.95rem)',
                       boxShadow: '0 6px 24px rgba(24, 36, 10, 0.08)',
                       textAlign: 'center',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      minHeight: isMobile ? '58px' : '68px',
+                      boxSizing: 'border-box',
                     }}
                   >
                     <div
                       style={{
                         color: '#4E6E10',
-                        fontSize: isMobile ? '0.55rem' : 'clamp(0.70rem, 0.78vw, 0.76rem)',
+                        fontSize: isMobile ? '0.58rem' : 'clamp(0.66rem, 0.74vw, 0.74rem)',
                         fontWeight: 800,
                         textTransform: 'uppercase',
-                        letterSpacing: '0.06em',
-                        marginBottom: isMobile ? '0.1rem' : '0.25rem',
-                        whiteSpace: 'nowrap',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
+                        letterSpacing: '0.05em',
+                        marginBottom: isMobile ? '0.15rem' : '0.25rem',
+                        lineHeight: 1.2,
+                        textAlign: 'center',
+                        width: '100%',
                       }}
                     >
                       {spec.label}
@@ -944,11 +1173,12 @@ export const NamoParallaxHero: React.FC = () => {
                     <div
                       style={{
                         color: '#18240A',
-                        fontSize: isMobile ? '0.72rem' : 'clamp(0.96rem, 1.12vw, 1.10rem)',
+                        fontSize: isMobile ? '0.74rem' : 'clamp(0.86rem, 0.98vw, 0.98rem)',
                         fontWeight: 800,
-                        whiteSpace: 'nowrap',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
+                        lineHeight: 1.25,
+                        textAlign: 'center',
+                        width: '100%',
+                        wordBreak: 'break-word',
                       }}
                     >
                       {spec.val}
@@ -971,7 +1201,7 @@ export const NamoParallaxHero: React.FC = () => {
               }}
             >
               <Link
-                to="/products"
+                to={currentSlide.categoryUrl}
                 className="hero-btn-primary"
                 style={{
                   display: 'inline-flex',
@@ -1029,17 +1259,17 @@ export const NamoParallaxHero: React.FC = () => {
                 <span>{isMobile ? 'Bulk Supply' : 'Inquire Bulk Supply'}</span>
               </Link>
             </div>
-          </div>
-
-          {/* RIGHT/BOTTOM: 3-Bottle Panoramic Product Showcase (Center Mid on Bottom, Proportional on Mobile) */}
+          </div>          {/* RIGHT/BOTTOM: Panoramic Product Showcase (Slide 1 reverted to original; Slide 2 & 3 dominant) */}
           <div
             className="hero-showcase-stage"
             style={{
-              flex: isMobile ? '1 1 auto' : '0 1 46%',
+              flex: isMobile ? '1 1 auto' : (isSlideOne ? '0 1 46%' : '0 1 50%'),
               width: '100%',
-              maxWidth: isMobile ? '440px' : 'none',
+              maxWidth: isMobile ? '460px' : 'none',
               height: isMobile ? 'auto' : '100%',
-              minHeight: isMobile ? 'clamp(255px, 34vh, 310px)' : 'none',
+              minHeight: isMobile
+                ? (isSlideOne ? 'clamp(255px, 34vh, 310px)' : 'clamp(270px, 35vh, 320px)')
+                : 'none',
               marginTop: isMobile ? '0.4rem' : '0',
               marginBottom: isMobile ? '0.2rem' : '0',
               margin: isMobile ? 'auto auto' : '0',
@@ -1050,14 +1280,16 @@ export const NamoParallaxHero: React.FC = () => {
               pointerEvents: 'auto',
             }}
           >
-            {/* Stage Showcase Area - Centered in Mid */}
+            {/* Stage Showcase Area */}
             <div
               className="hero-showcase-inner"
               style={{
                 position: 'relative',
-                width: isMobile ? '100%' : 'clamp(360px, 36vw, 500px)',
-                maxWidth: isMobile ? '360px' : 'none',
-                height: isMobile ? 'clamp(235px, 30vh, 275px)' : 'clamp(380px, 48vh, 480px)',
+                width: isMobile ? '100%' : (isSlideOne ? 'clamp(360px, 36vw, 500px)' : '100%'),
+                maxWidth: isMobile ? '360px' : (isSlideOne ? '500px' : '720px'),
+                height: isMobile
+                  ? (isSlideOne ? 'clamp(235px, 30vh, 275px)' : 'clamp(255px, 33vh, 305px)')
+                  : (isSlideOne ? 'clamp(380px, 48vh, 480px)' : 'clamp(430px, 53vh, 520px)'),
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -1072,23 +1304,25 @@ export const NamoParallaxHero: React.FC = () => {
                 className="stage-nav-arrow prev-arrow"
                 style={{
                   position: 'absolute',
-                  left: isMobile ? 'clamp(4px, 1.8vw, 10px)' : '-20px',
+                  left: isMobile
+                    ? (isSlideOne ? 'clamp(4px, 1.8vw, 10px)' : 'clamp(2px, 1.2vw, 8px)')
+                    : (isSlideOne ? '-20px' : '-26px'),
                   top: '50%',
                   transform: 'translateY(-50%)',
-                  width: isMobile ? '38px' : '50px',
-                  height: isMobile ? '38px' : '50px',
+                  width: isMobile ? '38px' : (isSlideOne ? '50px' : '52px'),
+                  height: isMobile ? '38px' : (isSlideOne ? '50px' : '52px'),
                   borderRadius: '50%',
-                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.96)',
                   backdropFilter: 'blur(10px)',
                   WebkitBackdropFilter: 'blur(10px)',
-                  border: '1.5px solid rgba(27, 77, 53, 0.22)',
+                  border: '1.5px solid rgba(27, 77, 53, 0.25)',
                   color: '#1B4D35',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  zIndex: 25,
-                  boxShadow: '0 8px 24px rgba(24, 36, 10, 0.14)',
+                  zIndex: 35,
+                  boxShadow: '0 8px 24px rgba(24, 36, 10, 0.16)',
                   transition: 'all 0.25s ease',
                 }}
               >
@@ -1102,34 +1336,123 @@ export const NamoParallaxHero: React.FC = () => {
                 className="stage-nav-arrow next-arrow"
                 style={{
                   position: 'absolute',
-                  right: isMobile ? 'clamp(4px, 1.8vw, 10px)' : '-20px',
+                  right: isMobile
+                    ? (isSlideOne ? 'clamp(4px, 1.8vw, 10px)' : 'clamp(2px, 1.2vw, 8px)')
+                    : (isSlideOne ? '-20px' : '-26px'),
                   top: '50%',
                   transform: 'translateY(-50%)',
-                  width: isMobile ? '38px' : '50px',
-                  height: isMobile ? '38px' : '50px',
+                  width: isMobile ? '38px' : (isSlideOne ? '50px' : '52px'),
+                  height: isMobile ? '38px' : (isSlideOne ? '50px' : '52px'),
                   borderRadius: '50%',
-                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.96)',
                   backdropFilter: 'blur(10px)',
                   WebkitBackdropFilter: 'blur(10px)',
-                  border: '1.5px solid rgba(27, 77, 53, 0.22)',
+                  border: '1.5px solid rgba(27, 77, 53, 0.25)',
                   color: '#1B4D35',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  zIndex: 25,
-                  boxShadow: '0 8px 24px rgba(24, 36, 10, 0.14)',
+                  zIndex: 35,
+                  boxShadow: '0 8px 24px rgba(24, 36, 10, 0.16)',
                   transition: 'all 0.25s ease',
                 }}
               >
                 <ChevronRight size={isMobile ? 20 : 28} color="#1B4D35" />
               </button>
 
-              {/* 3 Showcase Bottles (Proper Center Mid, Proportional Size on Mobile, No Badges) */}
-              {heroProducts.map((p, idx) => {
-                const offset = (idx - activeProductIndex + heroProducts.length) % heroProducts.length;
-                const isCenter = offset === 0;
-                const isRight = offset === 1;
+              {/* Showcase Products (Continuous Circular Hardware-Accelerated 3D Carousel) */}
+              {currentSlide.products.map((p, idx) => {
+                const total = currentSlide.products.length;
+                let diff = (idx - activeProductIndex + total) % total;
+                if (diff > total / 2) {
+                  diff -= total;
+                }
+
+                const isCenter = diff === 0;
+                const isRight = diff === 1;
+                const isLeft = diff === -1;
+                const isFarRight = diff >= 2;
+                const isVisible = isCenter || isRight || isLeft;
+
+                // Slot transform determination
+                let slotTransform = '';
+                let slotOpacity = 0;
+                let slotZIndex = 1;
+                let slotPointerEvents: 'default' | 'pointer' | 'none' = 'none';
+
+                if (isSlideOne) {
+                  if (isCenter) {
+                    slotTransform = isMobile
+                      ? 'translate(-50%, -50%) scale(1.0) translateZ(0)'
+                      : 'translate(-50%, -50%) scale(1.02) translateZ(0)';
+                    slotOpacity = 1;
+                    slotZIndex = 12;
+                    slotPointerEvents = 'default';
+                  } else if (isRight) {
+                    slotTransform = isMobile
+                      ? 'translate(calc(-50% + clamp(66px, 18vw, 82px)), -50%) scale(0.70) rotate(3deg) translateZ(0)'
+                      : 'translate(calc(-50% + clamp(115px, 9.5vw, 150px)), -50%) scale(0.74) rotate(4deg) translateZ(0)';
+                    slotOpacity = 0.88;
+                    slotZIndex = 5;
+                    slotPointerEvents = 'pointer';
+                  } else if (isLeft) {
+                    slotTransform = isMobile
+                      ? 'translate(calc(-50% - clamp(66px, 18vw, 82px)), -50%) scale(0.70) rotate(-3deg) translateZ(0)'
+                      : 'translate(calc(-50% - clamp(115px, 9.5vw, 150px)), -50%) scale(0.74) rotate(-4deg) translateZ(0)';
+                    slotOpacity = 0.88;
+                    slotZIndex = 5;
+                    slotPointerEvents = 'pointer';
+                  } else if (isFarRight) {
+                    slotTransform = 'translate(calc(-50% + 280px), -50%) scale(0.40) translateZ(0)';
+                    slotOpacity = 0;
+                    slotZIndex = 1;
+                    slotPointerEvents = 'none';
+                  } else {
+                    slotTransform = 'translate(calc(-50% - 280px), -50%) scale(0.40) translateZ(0)';
+                    slotOpacity = 0;
+                    slotZIndex = 1;
+                    slotPointerEvents = 'none';
+                  }
+                } else {
+                  // Slides 2 & 3: Dominant Center & Fluid Carousel
+                  if (isCenter) {
+                    slotTransform = isMobile
+                      ? 'translate(-50%, -50%) scale(1.08) translateZ(0)'
+                      : 'translate(-50%, -50%) scale(1.20) translateZ(0)';
+                    slotOpacity = 1;
+                    slotZIndex = 25;
+                    slotPointerEvents = 'default';
+                  } else if (isRight) {
+                    slotTransform = isMobile
+                      ? 'translate(calc(-50% + clamp(95px, 24vw, 125px)), -50%) scale(0.58) rotate(2deg) translateZ(0)'
+                      : 'translate(calc(-50% + clamp(185px, 17vw, 240px)), -50%) scale(0.62) rotate(3deg) translateZ(0)';
+                    slotOpacity = 0.45;
+                    slotZIndex = 6;
+                    slotPointerEvents = 'pointer';
+                  } else if (isLeft) {
+                    slotTransform = isMobile
+                      ? 'translate(calc(-50% - clamp(95px, 24vw, 125px)), -50%) scale(0.58) rotate(-2deg) translateZ(0)'
+                      : 'translate(calc(-50% - clamp(185px, 17vw, 240px)), -50%) scale(0.62) rotate(-3deg) translateZ(0)';
+                    slotOpacity = 0.45;
+                    slotZIndex = 6;
+                    slotPointerEvents = 'pointer';
+                  } else if (isFarRight) {
+                    slotTransform = isMobile
+                      ? 'translate(calc(-50% + 190px), -50%) scale(0.35) translateZ(0)'
+                      : 'translate(calc(-50% + 360px), -50%) scale(0.40) translateZ(0)';
+                    slotOpacity = 0;
+                    slotZIndex = 1;
+                    slotPointerEvents = 'none';
+                  } else {
+                    slotTransform = isMobile
+                      ? 'translate(calc(-50% - 190px), -50%) scale(0.35) translateZ(0)'
+                      : 'translate(calc(-50% - 360px), -50%) scale(0.40) translateZ(0)';
+                    slotOpacity = 0;
+                    slotZIndex = 1;
+                    slotPointerEvents = 'none';
+                  }
+                }
 
                 return (
                   <div
@@ -1139,82 +1462,172 @@ export const NamoParallaxHero: React.FC = () => {
                       position: 'absolute',
                       top: '50%',
                       left: '50%',
-                      transform: isCenter
-                        ? (isMobile
-                          ? 'translate(-50%, -50%) scale(1.0) rotate(0deg)'
-                          : 'translate(-50%, -50%) scale(1.02) rotate(0deg)')
-                        : isRight
-                          ? (isMobile
-                            ? 'translate(calc(-50% + clamp(66px, 18vw, 82px)), -50%) scale(0.70) rotate(3deg)'
-                            : 'translate(calc(-50% + clamp(115px, 9.5vw, 150px)), -50%) scale(0.74) rotate(4deg)')
-                          : (isMobile
-                            ? 'translate(calc(-50% - clamp(66px, 18vw, 82px)), -50%) scale(0.70) rotate(-3deg)'
-                            : 'translate(calc(-50% - clamp(115px, 9.5vw, 150px)), -50%) scale(0.74) rotate(-4deg)'),
-                      zIndex: isCenter ? 12 : 5,
-                      opacity: isCenter ? 1 : 0.88,
-                      cursor: isCenter ? 'default' : 'pointer',
-                      transition: 'transform 0.65s cubic-bezier(0.34, 1.35, 0.64, 1), opacity 0.4s ease, filter 0.4s ease',
+                      transform: slotTransform,
+                      zIndex: slotZIndex,
+                      opacity: slotOpacity,
+                      cursor: slotPointerEvents === 'pointer' ? 'pointer' : 'default',
+                      pointerEvents: slotPointerEvents === 'none' ? 'none' : 'auto',
+                      transition: 'transform 0.52s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.38s ease',
                       willChange: 'transform, opacity',
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
                     }}
                     onClick={() => {
-                      if (!isCenter) handleSelectProduct(idx);
+                      if (!isCenter && isVisible) handleSelectProduct(idx);
                     }}
                   >
-                    {/* Bottle Graphic (Transparent PNG, Sized to fit comfortably below navbar) */}
+                    {/* Ambient Glow for Active Center Product (Slide 2 & 3 only) */}
+                    {!isSlideOne && isCenter && (
+                      <div
+                        style={{
+                          position: 'absolute',
+                          top: '50%',
+                          left: '50%',
+                          transform: 'translate(-50%, -50%)',
+                          width: isMobile ? '240px' : '440px',
+                          height: isMobile ? '240px' : '440px',
+                          borderRadius: '50%',
+                          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0) 70%)',
+                          zIndex: -1,
+                          pointerEvents: 'none',
+                          filter: 'blur(20px)',
+                        }}
+                      />
+                    )}
+
+                    {/* Product Graphic (Fixed base size for 60fps GPU transform scaling with zero layout reflow) */}
                     <img
                       src={p.image}
                       alt={p.alt}
                       style={{
-                        height: isCenter
-                          ? (isMobile ? 'clamp(210px, 27vh, 240px)' : 'clamp(350px, 45vh, 440px)')
-                          : (isMobile ? 'clamp(135px, 18vh, 155px)' : 'clamp(250px, 32vh, 310px)'),
+                        height: isMobile
+                          ? 'clamp(210px, 27vh, 250px)'
+                          : (isSlideOne ? 'clamp(350px, 45vh, 440px)' : 'clamp(365px, 47vh, 450px)'),
                         width: 'auto',
-                        maxWidth: '100%',
+                        maxWidth: isSlideOne
+                          ? '100%'
+                          : (isMobile ? '340px' : 'clamp(520px, 48vw, 660px)'),
                         objectFit: 'contain',
-                        filter: isCenter
-                          ? 'drop-shadow(0 18px 28px rgba(24, 36, 10, 0.32)) drop-shadow(0 4px 10px rgba(24, 36, 10, 0.18))'
-                          : 'brightness(0.92) contrast(0.98) drop-shadow(0 12px 18px rgba(24, 36, 10, 0.20))',
+                        filter: isSlideOne
+                          ? (isCenter
+                            ? 'drop-shadow(0 18px 28px rgba(24, 36, 10, 0.32)) drop-shadow(0 4px 10px rgba(24, 36, 10, 0.18))'
+                            : 'brightness(0.92) contrast(0.98) drop-shadow(0 12px 18px rgba(24, 36, 10, 0.20))')
+                          : (isCenter
+                            ? 'drop-shadow(0 24px 34px rgba(24, 36, 10, 0.38)) drop-shadow(0 6px 12px rgba(24, 36, 10, 0.20)) brightness(1.03)'
+                            : 'brightness(0.85) contrast(0.94) drop-shadow(0 10px 16px rgba(24, 36, 10, 0.18))'),
                         userSelect: 'none',
-                        transition: 'filter 0.4s ease',
+                        transition: 'filter 0.35s ease',
                       }}
                     />
 
                     {/* Natural Soft Ground Contact Shadows */}
-                    {isCenter ? (
-                      <div
-                        style={{
-                          width: '65%',
-                          height: isMobile ? '12px' : '18px',
-                          borderRadius: '50%',
-                          background:
-                            'radial-gradient(ellipse at center, rgba(20, 35, 15, 0.38) 0%, rgba(20, 35, 15, 0.10) 50%, transparent 75%)',
-                          filter: isMobile ? 'blur(3px)' : 'blur(5px)',
-                          marginTop: isMobile ? '-5px' : '-8px',
-                          pointerEvents: 'none',
-                        }}
-                      />
-                    ) : (
-                      <div
-                        style={{
-                          width: '54%',
-                          height: isMobile ? '8px' : '12px',
-                          borderRadius: '50%',
-                          background:
-                            'radial-gradient(ellipse at center, rgba(20, 35, 15, 0.28) 0%, transparent 70%)',
-                          filter: 'blur(3px)',
-                          marginTop: isMobile ? '-3px' : '-5px',
-                          pointerEvents: 'none',
-                        }}
-                      />
-                    )}
+                    <div
+                      style={{
+                        width: isSlideOne
+                          ? (isCenter ? '65%' : '54%')
+                          : (isCenter ? '76%' : '48%'),
+                        height: isMobile
+                          ? (isCenter ? '12px' : '8px')
+                          : (isCenter ? (isSlideOne ? '18px' : '20px') : (isSlideOne ? '12px' : '10px')),
+                        borderRadius: '50%',
+                        background: isCenter
+                          ? 'radial-gradient(ellipse at center, rgba(20, 35, 15, 0.42) 0%, rgba(20, 35, 15, 0.10) 55%, transparent 75%)'
+                          : 'radial-gradient(ellipse at center, rgba(20, 35, 15, 0.24) 0%, transparent 70%)',
+                        filter: isMobile ? 'blur(3px)' : (isCenter ? 'blur(5px)' : 'blur(3px)'),
+                        marginTop: isMobile ? (isCenter ? '-5px' : '-3px') : (isCenter ? '-8px' : '-4px'),
+                        pointerEvents: 'none',
+                        opacity: isVisible ? 1 : 0,
+                        transition: 'opacity 0.35s ease, width 0.4s ease',
+                      }}
+                    />
                   </div>
                 );
               })}
             </div>
           </div>
+        </div>
+
+        {/* Global Hero Slider Navigation Control (Prev / Next Slide & Dots) */}
+        <div
+          className="hero-slider-bottom-controls"
+          style={{
+            position: 'absolute',
+            bottom: isMobile ? '10px' : '20px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.85rem',
+            backgroundColor: 'rgba(255, 255, 255, 0.94)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            border: '1.5px solid rgba(103, 160, 32, 0.32)',
+            padding: '0.32rem 0.95rem',
+            borderRadius: '9999px',
+            boxShadow: '0 8px 24px rgba(24, 36, 10, 0.12)',
+            zIndex: 35,
+            userSelect: 'none',
+          }}
+        >
+          <button
+            type="button"
+            onClick={prevHeroSlide}
+            aria-label="Previous Slide Category"
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: '#1B4D35',
+              display: 'flex',
+              alignItems: 'center',
+              padding: '0.2rem',
+              transition: 'transform 0.2s ease',
+            }}
+            className="slider-arrow-btn"
+          >
+            <ChevronLeft size={16} />
+          </button>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+            {heroSlides.map((s, dIdx) => (
+              <button
+                key={s.id}
+                type="button"
+                onClick={() => handleSelectHeroSlide(dIdx)}
+                aria-label={`Go to ${s.tabLabel}`}
+                style={{
+                  width: dIdx === activeSlideIndex ? '24px' : '8px',
+                  height: '8px',
+                  borderRadius: '9999px',
+                  backgroundColor: dIdx === activeSlideIndex ? '#1B4D35' : 'rgba(27, 77, 53, 0.28)',
+                  border: 'none',
+                  padding: 0,
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.34, 1.35, 0.64, 1)',
+                }}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={nextHeroSlide}
+            aria-label="Next Slide Category"
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: '#1B4D35',
+              display: 'flex',
+              alignItems: 'center',
+              padding: '0.2rem',
+              transition: 'transform 0.2s ease',
+            }}
+            className="slider-arrow-btn"
+          >
+            <ChevronRight size={16} />
+          </button>
         </div>
       </div>
 
@@ -1278,9 +1691,9 @@ export const NamoParallaxHero: React.FC = () => {
           .hero-showcase-stage {
             flex: 1 1 auto !important;
             width: 100% !important;
-            max-width: 440px !important;
+            max-width: 460px !important;
             height: auto !important;
-            min-height: clamp(255px, 34vh, 310px) !important;
+            min-height: clamp(270px, 35vh, 320px) !important;
             margin: auto auto !important;
             display: flex !important;
             align-items: center !important;
@@ -1290,8 +1703,8 @@ export const NamoParallaxHero: React.FC = () => {
           .hero-showcase-inner {
             position: relative !important;
             width: 100% !important;
-            max-width: 360px !important;
-            height: clamp(245px, 32vh, 290px) !important;
+            max-width: 380px !important;
+            height: clamp(255px, 33vh, 305px) !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
@@ -1334,10 +1747,10 @@ export const NamoParallaxHero: React.FC = () => {
           stroke: #FFDB15 !important;
         }
         .showcase-bottle-slot.is-standby:hover {
-          opacity: 1 !important;
+          opacity: 0.72 !important;
         }
         .showcase-bottle-slot.is-standby:hover img {
-          filter: brightness(1.0) contrast(1.0) drop-shadow(0 18px 28px rgba(24, 36, 10, 0.35)) !important;
+          filter: brightness(0.92) contrast(0.96) blur(0.5px) !important;
         }
         .hero-btn-primary:hover {
           background-color: #ffe033 !important;

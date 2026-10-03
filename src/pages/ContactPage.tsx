@@ -9,6 +9,7 @@ export const ContactPage: React.FC = () => {
         badge="GET IN TOUCH"
         title="Let's Grow a Healthier, Greener Tomorrow Together"
         subtitle="Connect directly with our headquarters in Chennai, Tamil Nadu for agricultural advisories, FPO procurement collaborations, dealership opportunities, or technical inquiries."
+        bgImage="/assets/hero-bg.jpg"
         breadcrumbs={[
           { label: 'Home', to: '/' },
           { label: 'Contact Us' },

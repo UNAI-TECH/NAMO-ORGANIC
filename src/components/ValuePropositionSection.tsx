@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Sprout, TrendingUp, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Sprout, TrendingUp, RefreshCw, CheckCircle2 } from 'lucide-react';
 
 export const ValuePropositionSection: React.FC = () => {
   const pillars = [
@@ -54,8 +54,8 @@ export const ValuePropositionSection: React.FC = () => {
               marginBottom: '1rem',
             }}
           >
-            <Sparkles size={14} color="#67A020" />
-            <span>12 — VALUE PROPOSITION</span>
+            <ShieldCheck size={14} color="#67A020" />
+            <span>VALUE PROPOSITION</span>
           </div>
 
           <h2

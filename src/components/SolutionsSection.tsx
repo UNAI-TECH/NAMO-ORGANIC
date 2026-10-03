@@ -56,7 +56,7 @@ export const SolutionsSection: React.FC = () => {
             }}
           >
             <ShieldCheck size={14} color="#4E6E10" />
-            <span>05 — OUR SOLUTIONS</span>
+            <span>OUR SOLUTIONS</span>
           </div>
 
           <h2

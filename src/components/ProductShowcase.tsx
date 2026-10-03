@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Sparkles, ShoppingBag, Eye, ArrowUpRight, Leaf } from 'lucide-react';
+import { Check, Sprout, ShoppingBag, Eye, ArrowUpRight, Leaf } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { PRODUCTS } from '../data/products';
 import type { Product } from '../data/products';
@@ -54,7 +54,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({
         <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
             <span className="badge-organic">
-              <Sparkles size={14} color="#4E6E10" />
+              <Sprout size={14} color="#4E6E10" />
               CINEMATIC PRODUCT SHOWCASE
             </span>
           </div>
@@ -525,7 +525,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({
                         letterSpacing: '0.06em',
                       }}
                     >
-                      {idx === 0 ? '01 — BIO-FERTILIZER' : idx === 1 ? '02 — BIO-PESTICIDE' : '03 — CATTLE CARE'}
+                      {idx === 0 ? 'BIO-FERTILIZER' : idx === 1 ? 'BIO-PESTICIDE' : 'CATTLE CARE'}
                     </span>
                   </div>
 

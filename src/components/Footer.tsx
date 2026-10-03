@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Globe, ArrowUp, Building } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -17,9 +17,10 @@ export const Footer: React.FC = () => {
 
   const navLinksCol2 = [
     { label: 'Our Agrarian Services', to: '/services' },
-    { label: 'Focus Products (Panchakavya)', to: '/products' },
-    { label: 'Why Choose NAMO', to: '/products#why-namo' },
-    { label: 'Panchakavya Benefits (-40% Water)', to: '/products#benefits' },
+    { label: 'Panchakavya Products', to: '/products/panchakavya' },
+    { label: 'Natural Products Portfolio', to: '/products/natural' },
+    { label: 'Pet Wellness Products', to: '/products/pets' },
+    { label: 'Why Choose NAMO', to: '/products/panchakavya#why-namo' },
   ];
 
   const navLinksCol3 = [
@@ -51,19 +52,27 @@ export const Footer: React.FC = () => {
             marginBottom: '3.5rem',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '2rem',
+            justifyContent: 'center',
+            textAlign: 'center',
           }}
         >
-          <div style={{ maxWidth: '800px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+          <div
+            style={{
+              maxWidth: '820px',
+              margin: '0 auto',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '1rem' }}>
               <img
                 src="/assets/Fashions__11_-removebg-preview.png"
                 alt="NAMO Logo"
                 style={{ height: '60px', width: 'auto' }}
               />
-              <div>
+              <div style={{ textAlign: 'left' }}>
                 <span
                   style={{
                     fontFamily: 'var(--font-display, "Plus Jakarta Sans", sans-serif)',
@@ -101,38 +110,16 @@ export const Footer: React.FC = () => {
                 lineHeight: 1.25,
                 marginTop: '0.8rem',
                 marginBottom: '0.6rem',
+                textAlign: 'center',
               }}
             >
               Saving India’s Soil. Nourishing India’s Families.
             </h3>
 
-            <p style={{ fontSize: '0.98rem', color: '#B5AFA4', lineHeight: 1.7, maxWidth: '720px' }}>
+            <p style={{ fontSize: '0.98rem', color: '#B5AFA4', lineHeight: 1.7, maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
               Building healthier agricultural systems through Panchakavya organic bio-inputs, sustainable
               farming practices, and farmer-oriented agricultural products.
             </p>
-          </div>
-
-          <div
-            style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.05)',
-              border: '1.5px solid rgba(255, 219, 21, 0.3)',
-              borderRadius: '20px',
-              padding: '1.6rem 2rem',
-              minWidth: '280px',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#FFDB15', marginBottom: '0.6rem' }}>
-              <Building size={16} />
-              <span style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                Corporate Registration
-              </span>
-            </div>
-            <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '0.04em' }}>
-              Organic Agriculture Enterprise
-            </div>
-            <div style={{ fontSize: '0.8rem', color: '#A8E63A', marginTop: '0.4rem' }}>
-              Chennai, Tamil Nadu, India
-            </div>
           </div>
         </div>
 
@@ -264,33 +251,22 @@ export const Footer: React.FC = () => {
             >
               DIRECT INQUIRIES
             </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.88rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                <Phone size={15} color="#FFDB15" />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', fontSize: '0.90rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <Phone size={17} color="#FFDB15" strokeWidth={2.2} style={{ flexShrink: 0 }} />
                 <a href="tel:+919500829886" style={{ color: '#EDE8DC', textDecoration: 'none', fontWeight: 600 }}>
                   +91 95008 29886
                 </a>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                <Mail size={15} color="#FFDB15" />
-                <a href="mailto:namoorganicpvtltd@gmail.com" style={{ color: '#EDE8DC', textDecoration: 'none', wordBreak: 'break-all' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <Mail size={17} color="#FFDB15" strokeWidth={2.2} style={{ flexShrink: 0 }} />
+                <a href="mailto:namoorganicpvtltd@gmail.com" style={{ color: '#EDE8DC', textDecoration: 'none', wordBreak: 'break-all', fontWeight: 500 }}>
                   namoorganicpvtltd@gmail.com
                 </a>
               </div>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
-                <Globe size={15} color="#FFDB15" style={{ marginTop: '2px' }} />
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
-                  <a href="https://www.namoorg.com" target="_blank" rel="noopener noreferrer" style={{ color: '#EDE8DC', textDecoration: 'none' }}>
-                    www.namoorg.com
-                  </a>
-                  <a href="https://www.namohydrogen.com" target="_blank" rel="noopener noreferrer" style={{ color: '#EDE8DC', textDecoration: 'none' }}>
-                    www.namohydrogen.com
-                  </a>
-                </div>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
-                <MapPin size={15} color="#FFDB15" style={{ marginTop: '2px' }} />
-                <span style={{ color: '#B5AFA4', lineHeight: 1.5 }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                <MapPin size={17} color="#FFDB15" strokeWidth={2.2} style={{ flexShrink: 0, marginTop: '3px' }} />
+                <span style={{ color: '#EDE8DC', fontSize: '0.90rem', fontWeight: 500, lineHeight: 1.55 }}>
                   5B, Jain's La Gardenia, Kothari Road, Nungambakkam, Chennai - 600034, Tamil Nadu, India.
                 </span>
               </div>

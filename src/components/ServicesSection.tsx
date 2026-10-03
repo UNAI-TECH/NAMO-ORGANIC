@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Boxes,
   Briefcase,
@@ -108,7 +109,7 @@ export const ServicesSection: React.FC = () => {
             }}
           >
             <Briefcase size={14} color="#67A020" />
-            <span>06 — OUR SERVICES</span>
+            <span>OUR SERVICES</span>
           </div>
 
           <h2
@@ -139,12 +140,10 @@ export const ServicesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 9 Services Grid (Perfect Equal Heights & Proportions) */}
+        {/* 9 Services Grid (3 Cards Evenly in Each Row) */}
         <div
+          className="services-grid-3col"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
-            gap: '1.8rem',
             marginBottom: '3.5rem',
             alignItems: 'stretch',
           }}
@@ -157,7 +156,7 @@ export const ServicesSection: React.FC = () => {
                 style={{
                   backgroundColor: '#F8F9F3',
                   borderRadius: '16px',
-                  padding: '2rem 1.8rem',
+                  padding: '1.4rem 1.35rem',
                   border: '1px solid rgba(24, 36, 10, 0.08)',
                   display: 'flex',
                   flexDirection: 'column',
@@ -174,7 +173,7 @@ export const ServicesSection: React.FC = () => {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      marginBottom: '1.25rem',
+                      marginBottom: '0.9rem',
                     }}
                   >
                     <span
@@ -194,7 +193,7 @@ export const ServicesSection: React.FC = () => {
                     <span
                       style={{
                         fontFamily: 'var(--font-display, "Plus Jakarta Sans", sans-serif)',
-                        fontSize: '1.25rem',
+                        fontSize: '1.15rem',
                         fontWeight: 800,
                         color: '#67A020',
                       }}
@@ -205,30 +204,30 @@ export const ServicesSection: React.FC = () => {
 
                   <div
                     style={{
-                      width: '46px',
-                      height: '46px',
-                      borderRadius: '12px',
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: '10px',
                       backgroundColor: '#FFFFFF',
                       boxShadow: '0 4px 12px rgba(24, 36, 10, 0.06)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      marginBottom: '1.2rem',
+                      marginBottom: '0.9rem',
                       color: '#293B14',
                     }}
                   >
-                    <Icon size={22} color="#293B14" />
+                    <Icon size={20} color="#293B14" />
                   </div>
 
                   <h3
                     style={{
                       fontFamily: 'var(--font-display, "Plus Jakarta Sans", sans-serif)',
-                      fontSize: '1.18rem',
+                      fontSize: '1.1rem',
                       fontWeight: 700,
                       color: '#18240A',
-                      marginBottom: '0.65rem',
-                      lineHeight: 1.35,
-                      minHeight: '2.8rem',
+                      marginBottom: '0.45rem',
+                      lineHeight: 1.3,
+                      minHeight: '2.5rem',
                       display: 'flex',
                       alignItems: 'center',
                     }}
@@ -236,15 +235,16 @@ export const ServicesSection: React.FC = () => {
                     {item.title}
                   </h3>
 
-                  <p style={{ fontFamily: 'var(--font-body, "Inter", sans-serif)', fontSize: '0.92rem', color: '#556645', lineHeight: 1.65, minHeight: '4.4rem' }}>
+                  <p style={{ fontFamily: 'var(--font-body, "Inter", sans-serif)', fontSize: '0.88rem', color: '#556645', lineHeight: 1.6, minHeight: '3.6rem' }}>
                     {item.desc}
                   </p>
                 </div>
 
-                <div
+                <Link
+                  to="/contact"
                   style={{
-                    marginTop: '1.6rem',
-                    paddingTop: '1rem',
+                    marginTop: '1.1rem',
+                    paddingTop: '0.75rem',
                     borderTop: '1px solid rgba(24, 36, 10, 0.06)',
                     display: 'flex',
                     alignItems: 'center',
@@ -252,11 +252,15 @@ export const ServicesSection: React.FC = () => {
                     color: '#293B14',
                     fontSize: '0.82rem',
                     fontWeight: 700,
+                    textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                    cursor: 'pointer',
                   }}
+                  className="inquire-service-link"
                 >
                   <span>Inquire Service</span>
-                  <ArrowRight size={13} color="#67A020" />
-                </div>
+                  <ArrowRight size={13} color="#67A020" className="inquire-service-arrow" />
+                </Link>
               </div>
             );
           })}
@@ -275,26 +279,28 @@ export const ServicesSection: React.FC = () => {
             flexWrap: 'wrap',
             gap: '1.5rem',
           }}
+          className="services-advisory-banner"
         >
           <div>
             <h4
               style={{
                 fontFamily: 'var(--font-display, "Plus Jakarta Sans", sans-serif)',
-                fontSize: '1.25rem',
+                fontSize: 'clamp(1.1rem, 2.5vw, 1.25rem)',
                 fontWeight: 800,
                 color: '#18240A',
                 marginBottom: '0.3rem',
+                lineHeight: 1.3,
               }}
             >
               Need Farmer Advisory or Custom Project Deployment?
             </h4>
-            <p style={{ fontSize: '0.94rem', color: '#4A583A' }}>
+            <p style={{ fontSize: '0.94rem', color: '#4A583A', margin: 0 }}>
               Connect directly with our agricultural specialists and project coordinators.
             </p>
           </div>
 
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -310,19 +316,57 @@ export const ServicesSection: React.FC = () => {
               textDecoration: 'none',
               boxShadow: '0 4px 14px rgba(27, 77, 53, 0.2)',
             }}
+            className="advisory-btn"
           >
             <span>Request Advisory</span>
             <ArrowRight size={15} color="#FFDB15" />
-          </a>
+          </Link>
         </div>
       </div>
 
       <style>{`
+        .services-grid-3col {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.6rem;
+        }
+        @media (max-width: 992px) {
+          .services-grid-3col {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 640px) {
+          .services-grid-3col {
+            grid-template-columns: 1fr;
+          }
+        }
+        @media (max-width: 768px) {
+          .services-advisory-banner {
+            padding: 1.5rem 1.25rem !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 1.2rem !important;
+          }
+          .services-advisory-banner .advisory-btn {
+            width: 100% !important;
+            justify-content: center !important;
+            text-align: center !important;
+          }
+        }
         .service-card:hover {
           transform: translateY(-4px);
           box-shadow: 0 14px 28px rgba(41, 59, 20, 0.08);
           border-color: #67A020;
           background-color: #FFFFFF;
+        }
+        .inquire-service-link:hover {
+          color: #4E6E10 !important;
+        }
+        .inquire-service-link:hover .inquire-service-arrow {
+          transform: translateX(4px);
+        }
+        .inquire-service-arrow {
+          transition: transform 0.2s ease;
         }
       `}</style>
     </section>

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Leaf, ShieldAlert, Sparkles, MapPin, History, RefreshCw } from 'lucide-react';
+import { Leaf, ShieldAlert, Crosshair, MapPin, History, RefreshCw } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,7 +50,7 @@ export const WhyNamo: React.FC = () => {
       badge: 'Zero Synthetics',
     },
     {
-      icon: <Sparkles size={28} color="#B5872A" />,
+      icon: <Crosshair size={28} color="#B5872A" />,
       number: '03',
       title: 'PRECISION AGRICULTURE',
       description: 'Drone-compatible liquid formulations support uniform coverage, reduced waste, and efficient farming practices — built for modern fields.',

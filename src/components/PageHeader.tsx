@@ -1,41 +1,64 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ChevronRight, Sparkles } from 'lucide-react';
 
 interface PageHeaderProps {
-  badge: string;
+  badge?: string;
   title: string;
   subtitle: string;
-  breadcrumbs: { label: string; to?: string }[];
+  breadcrumbs?: { label: string; to?: string }[];
+  bgImage?: string;
 }
 
 export const PageHeader: React.FC<PageHeaderProps> = ({
-  badge,
   title,
   subtitle,
-  breadcrumbs,
+  bgImage = '/assets/light_organic_farmland_bg.jpg',
 }) => {
   return (
     <div
       style={{
-        backgroundColor: '#111d0e',
-        color: '#FFFFFF',
-        padding: '5rem 2rem 4.5rem',
         position: 'relative',
+        backgroundColor: '#0d180b',
+        color: '#FFFFFF',
+        padding: 'clamp(3.5rem, 8vw, 5.5rem) 1.5rem clamp(3rem, 6vw, 4.5rem)',
         overflow: 'hidden',
         borderBottom: '2px solid rgba(103, 160, 32, 0.25)',
       }}
     >
-      {/* Background ambient lighting */}
+      {/* Background Image Layer */}
       <div
         style={{
           position: 'absolute',
-          top: '-30%',
+          inset: 0,
+          backgroundImage: `url("${bgImage}")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.36,
+          filter: 'saturate(1.2) brightness(0.92)',
+          transform: 'scale(1.02)',
+        }}
+      />
+
+      {/* Deep Rich Gradient Overlay for High Contrast & Readability */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(135deg, rgba(8, 16, 7, 0.93) 0%, rgba(17, 30, 14, 0.82) 50%, rgba(10, 20, 8, 0.92) 100%)',
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* Subtle organic light flare accents */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '-25%',
           right: '5%',
           width: '500px',
           height: '500px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(103, 160, 32, 0.15) 0%, rgba(17, 29, 14, 0) 70%)',
+          background: 'radial-gradient(circle, rgba(103, 160, 32, 0.22) 0%, rgba(17, 30, 14, 0) 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -47,79 +70,22 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
           width: '450px',
           height: '450px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(255, 219, 21, 0.08) 0%, rgba(17, 29, 14, 0) 70%)',
+          background: 'radial-gradient(circle, rgba(255, 219, 21, 0.1) 0%, rgba(17, 30, 14, 0) 70%)',
           pointerEvents: 'none',
         }}
       />
 
       <div style={{ maxWidth: '1360px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
-        {/* Breadcrumb Navigation */}
-        <nav
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-            fontSize: '0.8rem',
-            color: '#B5AFA4',
-            marginBottom: '1.5rem',
-          }}
-        >
-          {breadcrumbs.map((crumb, idx) => (
-            <React.Fragment key={idx}>
-              {crumb.to ? (
-                <Link
-                  to={crumb.to}
-                  style={{
-                    color: '#FFDB15',
-                    textDecoration: 'none',
-                    fontWeight: 600,
-                    transition: 'color 0.2s',
-                  }}
-                >
-                  {crumb.label}
-                </Link>
-              ) : (
-                <span style={{ color: '#FFFFFF', fontWeight: 600 }}>{crumb.label}</span>
-              )}
-              {idx < breadcrumbs.length - 1 && (
-                <ChevronRight size={14} color="rgba(255,255,255,0.4)" />
-              )}
-            </React.Fragment>
-          ))}
-        </nav>
-
-        {/* Badge */}
-        <div
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.45rem',
-            backgroundColor: 'rgba(255, 255, 255, 0.08)',
-            border: '1px solid rgba(255, 219, 21, 0.4)',
-            borderRadius: '9999px',
-            padding: '0.35rem 1rem',
-            color: '#FFDB15',
-            fontSize: '0.74rem',
-            fontWeight: 800,
-            letterSpacing: '0.14em',
-            textTransform: 'uppercase',
-            marginBottom: '1.2rem',
-          }}
-        >
-          <Sparkles size={13} color="#FFDB15" />
-          <span>{badge}</span>
-        </div>
-
         {/* Title */}
         <h1
           style={{
             fontFamily: 'var(--font-display, "Plus Jakarta Sans", sans-serif)',
-            fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)',
+            fontSize: 'clamp(2rem, 4.5vw, 3.6rem)',
             fontWeight: 800,
             letterSpacing: '-0.025em',
             color: '#FFFFFF',
             lineHeight: 1.18,
-            marginBottom: '1rem',
+            marginBottom: '1.1rem',
             maxWidth: '1000px',
           }}
         >
@@ -129,10 +95,12 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
         {/* Subtitle */}
         <p
           style={{
-            fontSize: 'clamp(1.05rem, 1.6vw, 1.25rem)',
-            lineHeight: 1.7,
-            color: 'rgba(255, 255, 255, 0.88)',
+            fontFamily: 'var(--font-body, "Inter", sans-serif)',
+            fontSize: 'clamp(0.98rem, 1.5vw, 1.2rem)',
+            lineHeight: 1.68,
+            color: 'rgba(255, 255, 255, 0.92)',
             maxWidth: '820px',
+            margin: 0,
           }}
         >
           {subtitle}

@@ -32,7 +32,7 @@ export const AboutSection: React.FC = () => {
             }}
           >
             <Leaf size={14} color="#67A020" />
-            <span>02 — ABOUT THE COMPANY</span>
+            <span>ABOUT THE COMPANY</span>
           </div>
 
           <h2

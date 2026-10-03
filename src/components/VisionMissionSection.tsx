@@ -1,5 +1,5 @@
 import React from 'react';
-import { Eye, Target, ArrowRight, HeartHandshake } from 'lucide-react';
+import { Eye, Target, ArrowRight, ArrowDown, HeartHandshake } from 'lucide-react';
 
 export const VisionMissionSection: React.FC = () => {
   return (
@@ -33,7 +33,7 @@ export const VisionMissionSection: React.FC = () => {
             }}
           >
             <Target size={14} color="#293B14" />
-            <span>03 — VISION & MISSION</span>
+            <span>VISION & MISSION</span>
           </div>
 
           <h2
@@ -292,35 +292,10 @@ export const VisionMissionSection: React.FC = () => {
             textAlign: 'center',
             boxShadow: '0 4px 20px rgba(24, 36, 10, 0.04)',
           }}
+          className="philosophy-ribbon"
         >
-          <span
-            style={{
-              fontSize: '0.74rem',
-              fontWeight: 800,
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              color: '#67A020',
-              display: 'block',
-              marginBottom: '0.75rem',
-            }}
-          >
-            SUPPORTING PHILOSOPHY
-          </span>
-
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-              gap: '1rem',
-              fontSize: 'clamp(1rem, 2vw, 1.35rem)',
-              fontFamily: 'var(--font-display, "Plus Jakarta Sans", sans-serif)',
-              fontWeight: 800,
-              color: '#18240A',
-              letterSpacing: '-0.01em',
-            }}
-          >
+          {/* Desktop Horizontal Sequence */}
+          <div className="philosophy-flow-desktop">
             <span style={{ color: '#293B14' }}>Healthy Crops</span>
             <ArrowRight size={18} color="#67A020" />
             <span style={{ color: '#4E6E10' }}>Thriving Communities</span>
@@ -328,9 +303,18 @@ export const VisionMissionSection: React.FC = () => {
             <span style={{ color: '#1b4d35' }}>A Sustainable Future</span>
           </div>
 
+          {/* Mobile Vertical Sequence (No awkward line-broken arrows) */}
+          <div className="philosophy-flow-mobile">
+            <span style={{ color: '#293B14' }}>Healthy Crops</span>
+            <ArrowDown size={16} color="#67A020" />
+            <span style={{ color: '#4E6E10' }}>Thriving Communities</span>
+            <ArrowDown size={16} color="#67A020" />
+            <span style={{ color: '#1b4d35' }}>A Sustainable Future</span>
+          </div>
+
           <div
             style={{
-              marginTop: '0.75rem',
+              marginTop: '0.85rem',
               fontSize: '0.9rem',
               color: '#6B7959',
               fontWeight: 500,
@@ -340,6 +324,40 @@ export const VisionMissionSection: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <style>{`
+        .philosophy-flow-desktop {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          font-size: clamp(1.1rem, 2vw, 1.35rem);
+          font-family: var(--font-display, "Plus Jakarta Sans", sans-serif);
+          fontWeight: 800;
+          color: #18240A;
+          letter-spacing: -0.01em;
+        }
+        .philosophy-flow-mobile {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          .philosophy-ribbon {
+            padding: 1.4rem 1.2rem !important;
+          }
+          .philosophy-flow-desktop {
+            display: none !important;
+          }
+          .philosophy-flow-mobile {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 0.45rem !important;
+            font-size: 1.05rem !important;
+            font-family: var(--font-display, "Plus Jakarta Sans", sans-serif);
+            font-weight: 800;
+          }
+        }
+      `}</style>
     </section>
   );
 };

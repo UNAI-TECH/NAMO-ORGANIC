@@ -65,7 +65,7 @@ export const RevenueModelSection: React.FC = () => {
             }}
           >
             <GitFork size={14} color="#4E6E10" />
-            <span>13 — REVENUE MODEL</span>
+            <span>REVENUE MODEL</span>
           </div>
 
           <h2
@@ -107,6 +107,7 @@ export const RevenueModelSection: React.FC = () => {
             marginBottom: '4.5rem',
             boxShadow: '0 16px 40px rgba(27, 77, 53, 0.22)',
           }}
+          className="value-chain-container"
         >
           <div
             style={{
@@ -122,39 +123,56 @@ export const RevenueModelSection: React.FC = () => {
             END-TO-END VALUE CHAIN FLOW
           </div>
 
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-              gap: '1rem',
-            }}
-          >
+          {/* Desktop Single Horizontal Flow (All 6 Steps Evenly in One Row) */}
+          <div className="value-chain-desktop">
             {steps.map((s, idx) => (
               <React.Fragment key={s.label}>
                 <div
                   style={{
                     backgroundColor: 'rgba(255, 255, 255, 0.08)',
                     border: '1.5px solid rgba(255, 219, 21, 0.35)',
-                    borderRadius: '16px',
-                    padding: '1rem 1.4rem',
+                    borderRadius: '14px',
+                    padding: '0.9rem 0.6rem',
                     textAlign: 'center',
-                    minWidth: '150px',
+                    flex: '1 1 0',
+                    minWidth: 0,
                   }}
                 >
-                  <div style={{ fontSize: '1rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.2rem' }}>
+                  <div style={{ fontSize: '0.92rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.2rem', lineHeight: 1.25 }}>
                     {s.label}
                   </div>
-                  <div style={{ fontSize: '0.74rem', color: '#FFDB15', fontWeight: 600 }}>
+                  <div style={{ fontSize: '0.72rem', color: '#FFDB15', fontWeight: 600 }}>
                     {s.sub}
                   </div>
                 </div>
 
                 {idx < steps.length - 1 && (
-                  <ArrowRight size={20} color="#FFDB15" style={{ opacity: 0.8 }} />
+                  <ArrowRight size={16} color="#FFDB15" style={{ opacity: 0.8, flexShrink: 0 }} />
                 )}
               </React.Fragment>
+            ))}
+          </div>
+
+          {/* Tablet & Mobile Balanced Grid (3x2 on tablet, 2x3 on mobile) */}
+          <div className="value-chain-mobile">
+            {steps.map((s) => (
+              <div
+                key={s.label}
+                style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                  border: '1.5px solid rgba(255, 219, 21, 0.35)',
+                  borderRadius: '14px',
+                  padding: '1rem 0.8rem',
+                  textAlign: 'center',
+                }}
+              >
+                <div style={{ fontSize: '0.94rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.25rem' }}>
+                  {s.label}
+                </div>
+                <div style={{ fontSize: '0.74rem', color: '#FFDB15', fontWeight: 600 }}>
+                  {s.sub}
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -291,6 +309,36 @@ export const RevenueModelSection: React.FC = () => {
       </div>
 
       <style>{`
+        .value-chain-desktop {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 0.6rem;
+          width: 100%;
+        }
+        .value-chain-mobile {
+          display: none;
+        }
+        @media (max-width: 1024px) {
+          .value-chain-desktop {
+            display: none !important;
+          }
+          .value-chain-mobile {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+          }
+        }
+        @media (max-width: 600px) {
+          .value-chain-mobile {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .value-chain-container {
+            padding: 1.6rem 1.2rem !important;
+          }
+        }
         .channel-card:hover {
           transform: translateY(-6px);
           box-shadow: 0 20px 40px rgba(41, 59, 20, 0.12);

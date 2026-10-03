@@ -39,7 +39,7 @@ export const MarketOpportunitySection: React.FC = () => {
             }}
           >
             <BarChart3 size={14} color="#67A020" />
-            <span>10 — MARKET OPPORTUNITY</span>
+            <span>MARKET OPPORTUNITY</span>
           </div>
 
           <h2
@@ -298,21 +298,9 @@ export const MarketOpportunitySection: React.FC = () => {
             padding: '3rem',
             border: '1px solid rgba(103, 160, 32, 0.25)',
           }}
+          className="market-drivers-container"
         >
           <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <span
-              style={{
-                fontSize: '0.78rem',
-                fontWeight: 800,
-                letterSpacing: '0.16em',
-                textTransform: 'uppercase',
-                color: '#4E6E10',
-                display: 'block',
-                marginBottom: '0.4rem',
-              }}
-            >
-              CATALYSTS OF EXPANSION
-            </span>
             <h3
               style={{
                 fontFamily: 'var(--font-display, "Plus Jakarta Sans", sans-serif)',
@@ -327,11 +315,7 @@ export const MarketOpportunitySection: React.FC = () => {
           </div>
 
           <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '1.2rem',
-            }}
+            className="catalysts-grid-3col"
           >
             {drivers.map((d, idx) => (
               <div
@@ -372,6 +356,26 @@ export const MarketOpportunitySection: React.FC = () => {
       </div>
 
       <style>{`
+        .catalysts-grid-3col {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.2rem;
+        }
+        @media (max-width: 992px) {
+          .catalysts-grid-3col {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 600px) {
+          .catalysts-grid-3col {
+            grid-template-columns: 1fr;
+          }
+        }
+        @media (max-width: 768px) {
+          .market-drivers-container {
+            padding: 1.6rem 1.25rem !important;
+          }
+        }
         .market-stat-card:hover {
           transform: translateY(-6px);
           box-shadow: 0 20px 45px rgba(41, 59, 20, 0.1);

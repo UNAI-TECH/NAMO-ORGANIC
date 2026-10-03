@@ -55,7 +55,7 @@ export const WhyChooseNamoSection: React.FC = () => {
             }}
           >
             <Award size={14} color="#67A020" />
-            <span>08 — UNIQUE SELLING PROPOSITION</span>
+            <span>UNIQUE SELLING PROPOSITION</span>
           </div>
 
           <h2

@@ -62,7 +62,7 @@ export const AimToScaleSection: React.FC = () => {
             }}
           >
             <Rocket size={14} color="#67A020" />
-            <span>14 — AIM TO SCALE</span>
+            <span>AIM TO SCALE</span>
           </div>
 
           <h2

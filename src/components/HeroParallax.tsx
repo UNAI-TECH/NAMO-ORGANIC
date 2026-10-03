@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Sparkles, Award, ShieldCheck, Leaf } from 'lucide-react';
+import { Sprout, Award, ShieldCheck, Leaf } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -297,7 +297,7 @@ export const HeroParallax: React.FC = () => {
         {/* Brand Tagline */}
         <div style={{ marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
           <span className="badge-organic">
-            <Sparkles size={13} color="#4E6E10" />
+            <Sprout size={13} color="#4E6E10" />
             NATURAL AGRICULTURE · MODERN ORGANIC
           </span>
         </div>

@@ -63,7 +63,7 @@ export const BenefitsSection: React.FC = () => {
             }}
           >
             <CheckCircle2 size={14} color="#4E6E10" />
-            <span>09 — PROVEN BENEFITS</span>
+            <span>PROVEN BENEFITS</span>
           </div>
 
           <h2
@@ -93,13 +93,12 @@ export const BenefitsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Benefits Grid */}
+        {/* Benefits Grid (Compact & Even Lengths) */}
         <div
+          className="benefits-grid-4col"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '2rem',
             marginBottom: '4.5rem',
+            alignItems: 'stretch',
           }}
         >
           {benefits.map((b) => {
@@ -109,10 +108,10 @@ export const BenefitsSection: React.FC = () => {
                 key={b.title}
                 style={{
                   backgroundColor: '#FFFFFF',
-                  borderRadius: '24px',
-                  padding: '2.4rem 2rem',
+                  borderRadius: '20px',
+                  padding: '1.6rem 1.5rem',
                   border: '1.5px solid rgba(103, 160, 32, 0.2)',
-                  boxShadow: '0 10px 30px rgba(24, 36, 10, 0.04)',
+                  boxShadow: '0 8px 24px rgba(24, 36, 10, 0.04)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -129,15 +128,15 @@ export const BenefitsSection: React.FC = () => {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      marginBottom: '1.4rem',
-                      minHeight: '48px',
+                      marginBottom: '1rem',
+                      minHeight: '42px',
                     }}
                   >
                     <div
                       style={{
-                        width: '48px',
-                        height: '48px',
-                        borderRadius: '14px',
+                        width: '42px',
+                        height: '42px',
+                        borderRadius: '12px',
                         backgroundColor: '#F0F4E8',
                         display: 'flex',
                         alignItems: 'center',
@@ -145,16 +144,16 @@ export const BenefitsSection: React.FC = () => {
                         color: '#293B14',
                       }}
                     >
-                      <Icon size={24} color="#293B14" />
+                      <Icon size={20} color="#293B14" />
                     </div>
 
                     <span
                       style={{
-                        fontSize: '0.74rem',
+                        fontSize: '0.72rem',
                         fontWeight: 800,
                         color: '#1b4d35',
                         backgroundColor: '#E4ECCF',
-                        padding: '0.3rem 0.75rem',
+                        padding: '0.25rem 0.65rem',
                         borderRadius: '8px',
                         letterSpacing: '0.04em',
                         textTransform: 'uppercase',
@@ -166,13 +165,13 @@ export const BenefitsSection: React.FC = () => {
 
                   <span
                     style={{
-                      fontSize: '0.74rem',
+                      fontSize: '0.72rem',
                       fontWeight: 800,
                       letterSpacing: '0.1em',
                       textTransform: 'uppercase',
                       color: '#67A020',
                       display: 'block',
-                      marginBottom: '0.45rem',
+                      marginBottom: '0.35rem',
                     }}
                   >
                     {b.highlight}
@@ -181,12 +180,12 @@ export const BenefitsSection: React.FC = () => {
                   <h3
                     style={{
                       fontFamily: 'var(--font-display, "Plus Jakarta Sans", sans-serif)',
-                      fontSize: '1.25rem',
+                      fontSize: '1.12rem',
                       fontWeight: 700,
                       color: '#18240A',
-                      marginBottom: '0.8rem',
-                      lineHeight: 1.35,
-                      minHeight: '3.4rem',
+                      marginBottom: '0.5rem',
+                      lineHeight: 1.3,
+                      minHeight: '2.6rem',
                       display: 'flex',
                       alignItems: 'center',
                     }}
@@ -197,10 +196,10 @@ export const BenefitsSection: React.FC = () => {
                   <p
                     style={{
                       fontFamily: 'var(--font-body, "Inter", sans-serif)',
-                      fontSize: '0.94rem',
+                      fontSize: '0.88rem',
                       color: '#4A583A',
-                      lineHeight: 1.65,
-                      minHeight: '4.8rem',
+                      lineHeight: 1.55,
+                      minHeight: '3.6rem',
                     }}
                   >
                     {b.desc}
@@ -209,18 +208,18 @@ export const BenefitsSection: React.FC = () => {
 
                 <div
                   style={{
-                    marginTop: '1.8rem',
-                    paddingTop: '1.2rem',
+                    marginTop: '1.2rem',
+                    paddingTop: '0.85rem',
                     borderTop: '1px solid rgba(24, 36, 10, 0.08)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.5rem',
                     color: '#293B14',
-                    fontSize: '0.82rem',
+                    fontSize: '0.8rem',
                     fontWeight: 700,
                   }}
                 >
-                  <CheckCircle2 size={16} color="#67A020" />
+                  <CheckCircle2 size={15} color="#67A020" />
                   <span>Scientifically Formulated & Field Proven</span>
                 </div>
               </div>
@@ -242,25 +241,13 @@ export const BenefitsSection: React.FC = () => {
             gap: '2rem',
             boxShadow: '0 16px 40px rgba(27, 77, 53, 0.25)',
           }}
+          className="climate-smart-banner"
         >
           <div style={{ maxWidth: '780px' }}>
-            <span
-              style={{
-                fontSize: '0.8rem',
-                fontWeight: 800,
-                letterSpacing: '0.14em',
-                textTransform: 'uppercase',
-                color: '#FFDB15',
-                display: 'block',
-                marginBottom: '0.6rem',
-              }}
-            >
-              CLIMATE-SMART AGRONOMY
-            </span>
             <h3
               style={{
                 fontFamily: 'var(--font-display, "Plus Jakarta Sans", sans-serif)',
-                fontSize: 'clamp(1.7rem, 2.8vw, 2.3rem)',
+                fontSize: 'clamp(1.5rem, 2.8vw, 2.3rem)',
                 fontWeight: 800,
                 letterSpacing: '-0.02em',
                 lineHeight: 1.25,
@@ -270,7 +257,7 @@ export const BenefitsSection: React.FC = () => {
             >
               Saving up to 40% of Irrigation Water per Season
             </h3>
-            <p style={{ fontFamily: 'var(--font-body, "Inter", sans-serif)', fontSize: '0.98rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.65 }}>
+            <p style={{ fontFamily: 'var(--font-body, "Inter", sans-serif)', fontSize: '0.98rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.65, margin: 0 }}>
               Panchakavya microbial colonies improve humus structure, preventing soil crusting and
               allowing moisture to infiltrate deeply without runoff or rapid evaporation.
             </p>
@@ -284,6 +271,7 @@ export const BenefitsSection: React.FC = () => {
               padding: '1.8rem 2.4rem',
               textAlign: 'center',
             }}
+            className="climate-smart-stat"
           >
             <div style={{ fontSize: '3rem', fontWeight: 900, color: '#FFDB15', lineHeight: 1 }}>
               40%
@@ -296,9 +284,34 @@ export const BenefitsSection: React.FC = () => {
       </div>
 
       <style>{`
+        .benefits-grid-4col {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+          .benefits-grid-4col {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 600px) {
+          .benefits-grid-4col {
+            grid-template-columns: 1fr;
+          }
+        }
+        @media (max-width: 768px) {
+          .climate-smart-banner {
+            padding: 1.6rem 1.25rem !important;
+            gap: 1.5rem !important;
+          }
+          .climate-smart-stat {
+            width: 100% !important;
+            padding: 1.4rem !important;
+          }
+        }
         .benefit-card:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 20px 40px rgba(41, 59, 20, 0.1);
+          transform: translateY(-4px);
+          box-shadow: 0 16px 32px rgba(41, 59, 20, 0.08);
           border-color: #67A020;
         }
       `}</style>

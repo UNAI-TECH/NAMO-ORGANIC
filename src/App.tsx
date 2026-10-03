@@ -12,6 +12,7 @@ import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { ProductsPage } from './pages/ProductsPage';
+import { PetProductsPage } from './pages/PetProductsPage';
 import { MarketPage } from './pages/MarketPage';
 import { ContactPage } from './pages/ContactPage';
 
@@ -90,7 +91,10 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products" element={<Navigate to="/products/panchakavya" replace />} />
+          <Route path="/products/panchakavya" element={<ProductsPage category="panchakavya" />} />
+          <Route path="/products/natural" element={<ProductsPage category="natural" />} />
+          <Route path="/products/pets" element={<PetProductsPage />} />
           <Route path="/market" element={<MarketPage />} />
           <Route path="/contact" element={<ContactPage />} />
 

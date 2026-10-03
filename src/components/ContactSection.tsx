@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, Globe, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, CheckCircle2, Clock, ShieldCheck, Truck } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -46,7 +46,7 @@ export const ContactSection: React.FC = () => {
             }}
           >
             <Mail size={14} color="#4E6E10" />
-            <span>15 — CONTACT US</span>
+            <span>CONTACT US</span>
           </div>
 
           <h2
@@ -82,9 +82,9 @@ export const ContactSection: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-            gap: '3rem',
-            alignItems: 'start',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+            gap: '2.5rem',
+            alignItems: 'stretch',
           }}
         >
           {/* Left Column: Official Contact Card */}
@@ -93,47 +93,234 @@ export const ContactSection: React.FC = () => {
               backgroundColor: '#1b4d35',
               color: '#FFFFFF',
               borderRadius: '24px',
-              padding: '3.5rem 3rem',
+              padding: 'clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 3.5vw, 3rem)',
               boxShadow: '0 20px 45px rgba(27, 77, 53, 0.25)',
               position: 'relative',
               overflow: 'hidden',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              height: '100%',
+              boxSizing: 'border-box',
             }}
           >
-            <div
-              style={{
-                fontSize: '0.78rem',
-                fontWeight: 800,
-                letterSpacing: '0.16em',
-                textTransform: 'uppercase',
-                color: '#FFDB15',
-                marginBottom: '1rem',
-              }}
-            >
-              CORPORATE HEADQUARTERS
+            <div>
+              <div
+                style={{
+                  fontSize: '0.78rem',
+                  fontWeight: 800,
+                  letterSpacing: '0.16em',
+                  textTransform: 'uppercase',
+                  color: '#FFDB15',
+                  marginBottom: '1rem',
+                }}
+              >
+                CORPORATE HEADQUARTERS
+              </div>
+
+              <h3
+                style={{
+                  fontFamily: 'var(--font-display, "Plus Jakarta Sans", sans-serif)',
+                  fontSize: 'clamp(1.5rem, 2.5vw, 1.8rem)',
+                  fontWeight: 800,
+                  letterSpacing: '-0.02em',
+                  color: '#FFFFFF',
+                  lineHeight: 1.25,
+                  marginBottom: '2rem',
+                }}
+              >
+                Natural Agriculture & Modern Organic Private Limited
+              </h3>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                {/* Phone */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                  <div
+                    style={{
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: '12px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.12)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Phone size={20} color="#FFDB15" />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.76rem', color: '#A8E63A', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
+                      Phone Number
+                    </div>
+                    <a
+                      href="tel:+919500829886"
+                      style={{
+                        fontSize: '1.2rem',
+                        fontWeight: 700,
+                        color: '#FFFFFF',
+                        textDecoration: 'none',
+                        marginTop: '2px',
+                        display: 'inline-block',
+                      }}
+                    >
+                      +91 95008 29886
+                    </a>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                  <div
+                    style={{
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: '12px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.12)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Mail size={20} color="#FFDB15" />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.76rem', color: '#A8E63A', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
+                      Official Corporate Email
+                    </div>
+                    <a
+                      href="mailto:namoorganicpvtltd@gmail.com"
+                      style={{
+                        fontSize: '1.05rem',
+                        fontWeight: 700,
+                        color: '#FFFFFF',
+                        textDecoration: 'none',
+                        marginTop: '2px',
+                        display: 'inline-block',
+                        wordBreak: 'break-all',
+                      }}
+                    >
+                      namoorganicpvtltd@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* Registered Address */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                  <div
+                    style={{
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: '12px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.12)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                    }}
+                  >
+                    <MapPin size={20} color="#FFDB15" />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.76rem', color: '#A8E63A', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
+                      Registered Office Address
+                    </div>
+                    <p style={{ fontSize: '1.02rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.55, marginTop: '2px', marginBottom: 0 }}>
+                      5B, Jain's La Gardenia, Kothari Road,<br />
+                      Nungambakkam, Chennai - 600034,<br />
+                      Tamil Nadu, India.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Farmer Support & Dispatch Channels - Fills empty space seamlessly */}
+                <div
+                  style={{
+                    marginTop: '0.5rem',
+                    padding: '1.15rem 1.25rem',
+                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                    borderRadius: '16px',
+                    border: '1px solid rgba(255, 255, 255, 0.14)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.85rem',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.85rem' }}>
+                    <div
+                      style={{
+                        width: '36px',
+                        height: '36px',
+                        borderRadius: '10px',
+                        backgroundColor: 'rgba(255, 219, 21, 0.15)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <ShieldCheck size={18} color="#FFDB15" />
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '0.75rem', color: '#A8E63A', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
+                        Farmer & FPO Procurement Desk
+                      </div>
+                      <p style={{ fontSize: '0.86rem', color: 'rgba(255, 255, 255, 0.92)', lineHeight: 1.45, margin: '2px 0 0 0' }}>
+                        Dedicated agronomy guidance, application dosage plans, and custom bulk supply for farmer groups.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div style={{ height: '1px', backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
+
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.85rem' }}>
+                    <div
+                      style={{
+                        width: '36px',
+                        height: '36px',
+                        borderRadius: '10px',
+                        backgroundColor: 'rgba(255, 219, 21, 0.15)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Truck size={18} color="#FFDB15" />
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '0.75rem', color: '#A8E63A', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
+                        Pan-India Supply & Logistics
+                      </div>
+                      <p style={{ fontSize: '0.86rem', color: 'rgba(255, 255, 255, 0.92)', lineHeight: 1.45, margin: '2px 0 0 0' }}>
+                        Reliable transit across Tamil Nadu and South Indian agrarian belts with quality certification.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <h3
+            {/* Operational Support Footer */}
+            <div
               style={{
-                fontFamily: 'var(--font-display, "Plus Jakarta Sans", sans-serif)',
-                fontSize: '1.8rem',
-                fontWeight: 800,
-                letterSpacing: '-0.02em',
-                color: '#FFFFFF',
-                lineHeight: 1.25,
-                marginBottom: '2rem',
+                marginTop: '1.6rem',
+                paddingTop: '1.4rem',
+                borderTop: '1px solid rgba(255, 255, 255, 0.15)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '0.85rem',
               }}
             >
-              Natural Agriculture & Modern Organic Private Limited
-            </h3>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.8rem' }}>
-              {/* Phone */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <div
                   style={{
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '12px',
+                    width: '38px',
+                    height: '38px',
+                    borderRadius: '10px',
                     backgroundColor: 'rgba(255, 255, 255, 0.12)',
                     display: 'flex',
                     alignItems: 'center',
@@ -141,134 +328,32 @@ export const ContactSection: React.FC = () => {
                     flexShrink: 0,
                   }}
                 >
-                  <Phone size={20} color="#FFDB15" />
+                  <Clock size={18} color="#FFDB15" />
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.76rem', color: '#A8E63A', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
-                    Direct Telephone Helpline
+                  <div style={{ fontSize: '0.74rem', color: '#A8E63A', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
+                    Working Hours
                   </div>
-                  <a
-                    href="tel:+919500829886"
-                    style={{
-                      fontSize: '1.25rem',
-                      fontWeight: 700,
-                      color: '#FFFFFF',
-                      textDecoration: 'none',
-                      marginTop: '2px',
-                      display: 'inline-block',
-                    }}
-                  >
-                    +91 95008 29886
-                  </a>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                <div
-                  style={{
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '12px',
-                    backgroundColor: 'rgba(255, 255, 255, 0.12)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                  }}
-                >
-                  <Mail size={20} color="#FFDB15" />
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.76rem', color: '#A8E63A', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
-                    Official Corporate Email
-                  </div>
-                  <a
-                    href="mailto:namoorganicpvtltd@gmail.com"
-                    style={{
-                      fontSize: '1.05rem',
-                      fontWeight: 700,
-                      color: '#FFFFFF',
-                      textDecoration: 'none',
-                      marginTop: '2px',
-                      display: 'inline-block',
-                      wordBreak: 'break-all',
-                    }}
-                  >
-                    namoorganicpvtltd@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              {/* Websites */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                <div
-                  style={{
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '12px',
-                    backgroundColor: 'rgba(255, 255, 255, 0.12)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                  }}
-                >
-                  <Globe size={20} color="#FFDB15" />
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.76rem', color: '#A8E63A', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
-                    Official Web Domains
-                  </div>
-                  <div style={{ marginTop: '3px', display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
-                    <a
-                      href="https://www.namoorg.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ fontSize: '1rem', fontWeight: 700, color: '#FFFFFF', textDecoration: 'none' }}
-                    >
-                      www.namoorg.com
-                    </a>
-                    <a
-                      href="https://www.namohydrogen.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ fontSize: '1rem', fontWeight: 700, color: '#FFFFFF', textDecoration: 'none' }}
-                    >
-                      www.namohydrogen.com
-                    </a>
+                  <div style={{ fontSize: '0.92rem', color: '#FFFFFF', fontWeight: 600, marginTop: '2px' }}>
+                    Mon – Sat: 9:00 AM – 6:30 PM IST
                   </div>
                 </div>
               </div>
 
-              {/* Registered Address */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                <div
-                  style={{
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '12px',
-                    backgroundColor: 'rgba(255, 255, 255, 0.12)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                  }}
-                >
-                  <MapPin size={20} color="#FFDB15" />
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.76rem', color: '#A8E63A', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
-                    Registered Office Address
-                  </div>
-                  <p style={{ fontSize: '0.98rem', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.6, marginTop: '3px' }}>
-                    5B, Jain's La Gardenia, Kothari Road,<br />
-                    Nungambakkam, Chennai - 600034,<br />
-                    Tamil Nadu, India.
-                  </p>
-                </div>
+              <div
+                style={{
+                  padding: '0.4rem 0.85rem',
+                  backgroundColor: 'rgba(255, 219, 21, 0.15)',
+                  border: '1px solid rgba(255, 219, 21, 0.35)',
+                  borderRadius: '8px',
+                  color: '#FFDB15',
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.04em',
+                }}
+              >
+                Agronomy Support
               </div>
-
             </div>
           </div>
 
@@ -277,9 +362,13 @@ export const ContactSection: React.FC = () => {
             style={{
               backgroundColor: '#FFFFFF',
               borderRadius: '24px',
-              padding: '3.5rem 3rem',
+              padding: 'clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 3.5vw, 3rem)',
               border: '1.5px solid rgba(103, 160, 32, 0.2)',
               boxShadow: '0 12px 35px rgba(24, 36, 10, 0.05)',
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100%',
+              boxSizing: 'border-box',
             }}
           >
             <h3
@@ -307,6 +396,11 @@ export const ContactSection: React.FC = () => {
                   borderRadius: '16px',
                   padding: '2.5rem 2rem',
                   textAlign: 'center',
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                 }}
               >
                 <div
@@ -349,7 +443,7 @@ export const ContactSection: React.FC = () => {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', flex: 1, justifyContent: 'space-between' }}>
                 <div>
                   <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: '#18240A', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                     Full Name *
@@ -373,7 +467,7 @@ export const ContactSection: React.FC = () => {
                   />
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1.2rem' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: '#18240A', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                       Phone Number *

@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Leaf,
   ShieldAlert,
-  Sparkles,
+  Droplets,
   MapPin,
   History,
   RefreshCw,
@@ -32,7 +32,7 @@ export const WhyNamoPage: React.FC = () => {
       badge: 'Living Purity',
     },
     {
-      icon: <Sparkles size={28} color="#B5872A" />,
+      icon: <Droplets size={28} color="#B5872A" />,
       number: '03',
       title: 'CHEMICAL-FREE MECHANICAL EXTRACTION',
       description:
