@@ -304,12 +304,12 @@ export const NamoParallaxHero: React.FC = () => {
     handleSelectProduct((activeProductIndex - 1 + total) % total);
   };
 
-  // Auto-play for hero slides carousel (every 9s, pauses on hover/interaction)
+  // Auto-play for hero slides carousel (every 10s, pauses on hover/interaction)
   useEffect(() => {
     if (isSlidePaused) return;
     const interval = setInterval(() => {
       handleSelectHeroSlide((activeSlideIndex + 1) % heroSlides.length);
-    }, 9000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [activeSlideIndex, isSlidePaused, heroSlides.length]);
 
